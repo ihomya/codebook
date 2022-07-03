@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1366px;
+            height: 600px;
+            margin: 0 auto;
+            background: url('./images/bg.jpg');
+            /* 隐藏溢出部分 */
+            overflow: hidden;
+        }
+
+        /* 伪元素实现 */
+        .box::before,
+        .box::after {
+            /* 伪元素：行内显示模式 */
+            float: left;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background-image: url(./images/fm.jpg);
+            /* 过渡 */
+            transition: all 5s;
+        }
+
+        .box::after {
+            /* 取精灵图右半部分 */
+            background-position: right 0;
+        }
+
+        /* hover实现双开 */
+        .box:hover::before {
+            /* 向左移动 */
+            transform: translate(-100%);
+        }
+
+        .box:hover::after {
+            /* 向右移动 */
+            transform: translate(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 使用2个div/伪元素选择器 -->
+    </div>
+</body>
+
+</html>

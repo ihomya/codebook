@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var money = 100;
+        do {
+            var option = prompt('请输入您要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if (option == 1) {
+                var value = prompt('请输入存入数值：');
+                money += parseFloat(value);
+                alert('当前余额：' + money);
+            } else if (option == 2) {
+                var value = prompt('请输入取钱数值：');
+                money -= parseFloat(value);
+                alert('当前余额：' + money);
+            } else if (option == 3) {
+                alert('当前余额：' + money);
+            } else if (option == 4) {
+                break;
+            }
+        } while (option <= 4)
+    </script>
+</body>
+
+</html>

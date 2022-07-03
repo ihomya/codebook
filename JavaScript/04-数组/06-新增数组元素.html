@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 新增数组元素 修改length长度
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr);
+        arr.length = 5; // 修改数组长度为 5 ，里面包含5个元素
+        console.log(arr);
+        console.log(arr[3]); // undefined
+        console.log(arr[4]); // undefined
+
+        // 2. 新增数组元素 修改索引号 追加数组元素
+        var arr1 = ['red', 'green', 'blue'];
+        console.log(arr1);
+        arr1[3] = 'pink';
+        console.log(arr1);
+        arr1[0] = 'yellow'; // 替换原来的数组元素
+        console.log(arr1[0]);
+        arr1 = 'abc';
+        console.log(arr1); // 数组将变成字符串'abc'
+    </script>
+</body>
+
+</html>

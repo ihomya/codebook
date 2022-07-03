@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = '';
+        for (var i = 1; i <= 9; i++) { // 负责行数，第二个值
+            for (var j = 1; j <= i; j++) { // 负责每行个数，核心算法: 公式个数 == 行数 
+                str = str + j + 'x' + i + '=' + j * i + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>精灵动画</title>
+  <style>
+    .box {
+      /* 1680/12 ： 保证显示区域的尺寸和一个精灵小图的尺寸相同 */
+      width: 140px;
+      height: 140px;
+      /* border: 1px solid #000; */
+      background-image: url(./images/bg.png);
+      /* 逐帧动画：12-精灵小图个数 */
+      /* 多组动画 */
+      animation:
+        move 1s steps(12) infinite,
+        run 5s forwards;
+    }
+
+    /* 
+      1. 准备显示区域
+      2. 定义动画
+      3. 使用动画，无限循环
+    */
+
+    @keyframes move {
+      /* from {
+        background-position: 0 0;
+      } */
+
+      to {
+        /* -1680: 精灵图向左移动，精灵图宽度 */
+        background-position: -1680px 0;
+      }
+    }
+
+    /* 定义盒子位移动画 */
+    @keyframes run {
+      /* 开始状态与样式相同时可省略 */
+      /* from {
+        transform: translateX(0);
+      } */
+
+      to {
+        transform: translateX(800px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

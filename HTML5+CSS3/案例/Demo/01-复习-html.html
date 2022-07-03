@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            /* 内嵌式 */
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>二级标题</h1>
+        <p style="font-size: 50px;font-family: 宋体;">段落标签</p>
+        <b>加粗</b><br>
+        <strong>加粗（语义强烈）</strong><br>
+        <u>下划线</u><br>
+        <ins>下划线（语义强烈）</ins><br>
+        <s>删除线</s><br>
+        <del>删除线（语义强烈）</del><br>
+        <i>斜体</i><br>
+        <em>斜体（语义强烈）</em>
+        <img src="../01/images/cat.gif" title="鼠标悬停显示文字">
+        <img src="./1.png" alt="图片加载不出时显示文字"><br>
+        <!-- 显示控件 -->
+        <audio src="../01/images/music.mp3" controls></audio>
+        <!-- 自动播放，部分浏览器不支持 -->
+        <audio src="../01/images/music.mp3" controls autoplay></audio>
+        <!-- 循环播放 -->
+        <audio src="../01/images/music.mp3" controls autoplay loop></audio>
+        <!-- 默认只显示第一画面 -->
+        <video src="../01/images/video.mp4" width="300"></video>
+        <!-- 显示控件 -->
+        <video src="../01/images/video.mp4" width="300" controls></video>
+        <!-- 自动播放，需配合muted静默播放 -->
+        <video src="../01/images/video.mp4" width="300" controls autoplay muted></video>
+        <!-- 循环播放 -->
+        <video src="../01/images/video.mp4" width="300" controls autoplay muted loop></video><br>
+        <a href="#">超链接</a>
+        <a href="#id">锚链接</a>
+    </div>
+    <div>
+        <h4>无序列表</h4>
+        <ul>
+            <li>无序列表项1</li>
+            <li>无序列表项2</li>
+            <li>无序列表项3</li>
+        </ul>
+        <h4>有序列表</h4>
+        <ol>
+            <li>有序列表项1</li>
+            <li>有序列表项2</li>
+            <li>有序列表项3</li>
+        </ol>
+        <h4>自定义列表</h4>
+        <dl>
+            <dt>标题1</dt>
+            <dd>项1</dd>
+            <dd>项2</dd>
+            <dd>项3</dd>
+            <dt>标题2</dt>
+            <dd>项1</dd>
+            <dd>项2</dd>
+            <dd>项3</dd>
+        </dl>
+    </div>
+    <div>
+        <!-- 显示边框 -->
+        <table border="1">
+            <caption>表格标题</caption>
+            <!-- 表格头部 -->
+            <thead>
+                <tr>
+                    <!-- 表头th替换td -->
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                </tr>
+            </thead>
+            <!-- 表格主体 -->
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td rowspan="2">男</td>
+                    <td rowspan="2">18</td>
+                </tr>
+                <tr>
+                    <td>赵四</td>
+                    <!-- <td>男</td> -->
+                    <!-- <td>18</td> -->
+                    <!-- 合并-左上原则 -->
+                </tr>
+            </tbody>
+            <!-- 表格底部 -->
+            <tfoot>
+                <tr>
+                    <td>总结</td>
+                    <td colspan="2">都是男的</td>
+                    <!-- <td>都是男的</td> -->
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div>
+        <!-- form内按钮才可生效 -->
+        <!-- action 指定提交地址 -->
+        <form action="">
+            文本框：<input type="text" placeholder="占位符"><br>
+            密码框：<input type="password" placeholder="输入密码"><br>
+            <!-- 使用name属性分组 -->
+            单选：
+            <input type="radio" name="sex" id="">男
+            <!-- 默认选择 -->
+            <input type="radio" name="sex" checked>女
+            <!-- 实现点击字体/图片进行选择 -->
+            <label><input type="radio" name="sex" id="">保密</label>
+            <!-- <input type="radio" name="sex" id="id1"><label for="id1">保密</label> -->
+            <br>
+            多选：
+            <label><input type="checkbox" name="" id="" checked>你</label>
+            <!-- 默认选择 -->
+            <label><input type="checkbox">我</label>
+            <label><input type="checkbox" name="" id="">他</label><br>
+            按钮：
+            <!-- 提交 -->
+            <input type="submit" name="" id="">
+            <!-- 重置 -->
+            <input type="reset" name="" id="">
+            <!-- 使用value命名 -->
+            <input type="button" value="普通按钮">
+            <button>普通按钮</button>
+            <button type="reset">重置按钮</button>
+            <button type="submit">提交按钮</button>
+        </form>
+        下拉菜单：
+        <select>
+            <option value="1">1990</option>
+            <option value="">1992</option>
+            <!-- 默认选择 -->
+            <option selected>1993</option>
+        </select><br>
+        文本域：<textarea name="" id="" cols="30" rows="10">默认内容</textarea><br>
+        字符实体：空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格
+    </div>
+    <h3 id="id">三级标题</h3>
+</body>
+
+</html>

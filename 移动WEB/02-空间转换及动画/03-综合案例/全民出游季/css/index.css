@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: url(../images/f1_1.jpg) no-repeat center 0;
+
+    /* 缩放背景图 */
+    /* 如果图的宽或高与盒子的尺寸相同了, 另一个方向停止缩放 -- 导致盒子可能有留白 */
+    /* background-size: contain; */
+    /* 覆盖在整个屏幕，图片可能显示不全 */
+    background-size: cover;
+}
+
+/* 
+    1. img定位
+    2. 定义动画，使用动画
+*/
+
+.cloud img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.cloud img:nth-child(1) {
+    margin-left: -230px;
+    top: 30px;
+    animation: cloud 1s infinite linear alternate;
+}
+
+.cloud img:nth-child(2) {
+    margin-left: 300px;
+    top: 100px;
+    animation: cloud 1s infinite linear alternate 0.2s;
+}
+
+.cloud img:nth-child(3) {
+    margin-left: -500px;
+    top: 200px;
+    animation: cloud 1s infinite linear alternate 0.4s;
+}
+
+/* 云彩动画 */
+@keyframes cloud {
+    to {
+        transform: translateX(20px);
+    }
+}
+
+.rqq {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: -300px;
+    animation: rqq 1s infinite linear alternate;
+}
+
+/* 热气球动画 */
+@keyframes rqq {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.hd img {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    width: 67px;
+}
+
+.hd img:nth-child(1) {
+    margin-left: -300px;
+    animation: hd 1s infinite linear alternate;
+}
+
+.hd img:nth-child(2) {
+    margin-left: -100px;
+    animation: hd 1s infinite linear alternate 0.2s;
+}
+
+.hd img:nth-child(3) {
+    margin-left: 100px;
+    animation: hd 1s infinite linear alternate 0.4s;
+}
+
+.hd img:nth-child(4) {
+    margin-left: 300px;
+    animation: hd 1s infinite linear alternate 0.6s;
+}
+
+/* 活动动画 */
+@keyframes hd {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.font {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.lu {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    /* width: 100px; */
+    margin-left: 100px;
+}

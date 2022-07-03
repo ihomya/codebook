@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol:nth-child(1) {
+            list-style-type: none;
+        }
+
+        ol:nth-child(2) {
+            list-style-type: lower-alpha;
+        }
+
+        ol:nth-child(3) {
+            list-style-type: upper-alpha;
+        }
+
+        ol:nth-child(4) {
+            list-style-type: lower-roman;
+        }
+
+        ol:nth-child(5) {
+            list-style-type: upper-roman;
+        }
+
+        ol:nth-child(6) {
+            list-style-type: decimal;
+        }
+
+
+        div ul:nth-child(1) {
+            list-style-type: disc;
+        }
+
+        div ul:nth-child(2) {
+            list-style-type: circle;
+        }
+
+        div ul:nth-child(3) {
+            list-style-type: square;
+            /* list-style-image:url('sqpurple.gif'); */
+        }
+
+        ul.inside {
+            /* 列表项目标记放置在文本以内，且环绕文本根据标记对齐。 */
+            list-style-position: inside;
+        }
+
+        ul.outside {
+            /* 	默认值。保持标记位于文本的左侧。列表项目标记放置在文本以外，且环绕文本不根据标记对齐。 */
+            list-style-position: outside;
+        }
+
+        ul.inside li,
+        ul.outside li {
+            background-color: pink;
+        }
+
+        /* 复合属性
+            按顺序
+            list-style: (list-style-type) (list-style-position) (list-style-image)
+            属性名：initial - 恢复默认
+            list-style: initial;
+        */
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>none：不使用项目符号</li>
+    </ol>
+    <ol>
+        <li>lower-alpha：小写英文字母</li>
+    </ol>
+    <ol>
+        <li>upper-alpha：大写英文字母</li>
+    </ol>
+    <ol>
+        <li>lower-roman：小写罗马数字</li>
+    </ol>
+    <ol>
+        <li>upper-roman：大写罗马数字</li>
+    </ol>
+    <ol>
+        <li>decimal：阿拉伯数字</li>
+    </ol>
+    <div>
+        <ul>
+            <li>disc：实心圆</li>
+        </ul>
+        <ul>
+            <li>circle：空心圆</li>
+        </ul>
+        <ul>
+            <li>square：实心方块</li>
+        </ul>
+
+    </div>
+
+
+    <p>该列表的 list-style-position 的值是 "inside"：</p>
+    <ul class="inside">
+        <li>Earl Grey Tea - 一种黑颜色的茶</li>
+        <li>Jasmine Tea - 一种神奇的“全功能”茶</li>
+        <li>Honeybush Tea - 一种令人愉快的果味茶</li>
+    </ul>
+
+    <p>该列表的 list-style-position 的值是 "outside"：</p>
+    <ul class="outside">
+        <li>Earl Grey Tea - 一种黑颜色的茶</li>
+        <li>Jasmine Tea - 一种神奇的“全功能”茶</li>
+        <li>Honeybush Tea - 一种令人愉快的果味茶</li>
+    </ul>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

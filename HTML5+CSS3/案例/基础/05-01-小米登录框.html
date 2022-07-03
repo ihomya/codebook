@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .login {
+            width: 500px;
+            height: 339px;
+            /* background-color: pink; */
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        /* h1替代 */
+        /* .login img {
+            background-color: #ff4c00;
+        } */
+
+        .login h1 {
+            width: 49px;
+            height: 49px;
+            /* logo这个背景图片是透明的四周中间有白色的logo，所以需要设置背景颜色从而衬托出白色的logo */
+            background: #ff4c00 url('./images/05/mi-logo.png');
+            margin: 0 auto;
+        }
+
+        .login h2 {
+            height: 77px;
+            font-size: 30px;
+            /* line-height: 1; */
+            /* margin: 35px 0 48px; */
+            margin-top: 35px;
+            font-weight: 400;
+        }
+
+        .login input.text {
+            width: 356px;
+            height: 50px;
+            /* display: inline-block; */
+            margin-bottom: 14px;
+            /* 只需左内间距 */
+            /* padding: 0 15px; */
+            padding-left: 15px;
+            border: 1px solid #e0e0e0;
+            /* 不要盒子被撑大，自动内减 */
+            box-sizing: border-box;
+        }
+
+        .login input.submit {
+            width: 356px;
+            height: 50px;
+            background-color: #ff4c00;
+            /* display: inline-block; */
+            border: none;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <!-- <img src="./images/05/mi-logo.png" alt=""> -->
+        <h1></h1>
+        <h2>小米账号登录</h2>
+        <input type="text" placeholder="邮箱/手机号/小米ID" class="text">
+        <input type="password" placeholder="密码" class="text">
+        <input type="submit" value="登录" class="submit">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            border-bottom: 1px solid #dadce0;
+            height: 40px;
+        }
+
+        .nav ul {
+            margin: 0 auto;
+
+            list-style: none;
+            width: 1200px;
+            /* height: 40px; */
+            /* background-color: pink; */
+
+        }
+
+        .nav ul li {
+            float: left;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+            height: 40px;
+            width: 240px;
+            /* background-color: green; */
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .nav ul li:last-child {
+            border-right: none;
+        }
+
+        .nav ul li a {
+            display: block;
+            /* width: 240px; */
+            height: 40px;
+            /* background-color: green; */
+            /* line-height: 40px;
+            text-align: center; */
+
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav ul .app {
+            position: relative;
+        }
+
+        .app .code {
+            display: none;
+
+            position: absolute;
+            left: 50%;
+            top: 41px;
+            transform: translate(-50%);
+        }
+
+        /* 鼠标悬停a 显示二维码图片 */
+        .nav li a:hover img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">我要投资</a></li>
+            <li><a href="#">平台介绍</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li>
+                <a href="#" class="app">手机微金所<img src="./images/code.jpg" alt="" class="code"></a>
+            </li>
+            <li><a href="#">个人中心</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

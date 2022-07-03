@@ -1,0 +1,47 @@
+.box {
+  width: 200px;
+  background-color: skyblue;
+}
+/* 文本颜色 */
+.color {
+  color: red;
+  /* 十六进制值 */
+  /* RGB值 */
+  color: #ff0000;
+}
+/* 文本对齐方式 */
+.text-align {
+  /* 水平居中 */
+  /* 靠右对齐 */
+  /* 每一行被展开为宽度相等，左，右外边距是对齐 */
+}
+.text-align .center {
+  text-align: center;
+}
+.text-align .right {
+  text-align: right;
+}
+.text-align .justify {
+  text-align: justify;
+}
+/* 文本修饰 */
+.text-decoration h3 {
+  text-decoration: line-through;
+}
+.text-decoration h4 {
+  text-decoration: underline;
+}
+.text-decoration h5 {
+  text-decoration: overline;
+}
+/* 文本缩进 */
+.text-indent p {
+  text-indent: 20px;
+}
+.text-indent p:first-child {
+  text-indent: 2em;
+}
+/* 行高 */
+.line-height {
+  line-height: 26px;
+}

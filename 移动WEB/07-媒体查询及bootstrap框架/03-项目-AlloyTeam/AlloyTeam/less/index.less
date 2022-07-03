@@ -1,0 +1,74 @@
+// banner
+.carousel {
+    // 视口<768: height=250
+    // 视口<992: height=400
+    // 视口>992: height=500
+
+    img {
+        height: 100% !important;
+    }
+
+    @media (max-width:992px) {
+        .item {
+            height: 400px;
+        }
+    }
+
+    @media (max-width:768px) {
+        .item {
+            height: 250px;
+        }
+    }
+
+    @media (min-width:992px) {
+        .item {
+            height: 500px;
+        }
+    }
+}
+
+//头部
+.navbar-default {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 0;
+    padding: 10px 0;
+
+    .container {
+        .navbar-brand {
+
+            vertical-align: middle;
+        }
+
+        .collapse.navbar-collapse {
+            .nav.navbar-nav.navbar-right {
+                font-size: 16px;
+
+                a {
+                    color: hsla(0, 0%, 100%, .65);
+                    padding: 15px 5px;
+                    margin-right: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// 开源项目
+.project {
+    padding-top: 30px;
+    text-align: center;
+
+    .container {
+        div {
+            background-color: pink;
+
+            a {
+                display: block;
+                height: 200px;
+                background-color: skyblue;
+            }
+        }
+    }
+}

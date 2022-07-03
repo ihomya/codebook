@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :root 选择器选择文档中的根元素 */
+        :root {
+            background-color: #ccc;
+        }
+
+        /* 选择元素输入后具有焦点 */
+        input:focus {
+            background-color: aqua;
+        }
+
+        /* 
+            定义和用法
+            ＃ 锚的名称是在一个文件中链接到某个元素的URL。元素被链接到目标元素。例如，example.html＃myelement转到在example.html中的id为“myelement”的元素。
+            :target选择器可用于当前活动的target元素的样式。
+         */
+        #one:target {
+            background-color: pink;
+        }
+
+        /* 选择元素的第一个字母 仅适用块级 */
+        p:first-letter {
+            font-size: 200%;
+            color: #8A2BE2;
+        }
+
+        /* 选择每个<p> 元素的第一行 仅适用块级 */
+        p:first-line {
+            background-color: pink;
+        }
+
+        /* 	为<p>元素的lang属性选择一个开始值 */
+        p:lang(it) {
+            background: yellow;
+        }
+
+
+        /* 
+            注意: :valid和:invalid 选择器只作用于能指定区间值的元素，
+            例如 input 元素中的 min 和 max 属性，及正确的 email 字段, 合法的数字字段等 
+        */
+        /* :invalid 选择器用于在表单元素中的值是非法时设置指定样式 */
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        /* :valid 选择器在表单元素的值需要根据指定条件验证时设置指定样式 */
+        input:valid {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        输入框焦点伪类focus
+        <input type="text">
+        <a href="#one">锚链接</a>
+        <p id="one" lang="it">oneone1111 <br>oneone1111</p>
+
+        <input type="email" value="abcemail">
+        <input type="email" value="support@exampel.com" />
+    </div>
+</body>
+
+</html>

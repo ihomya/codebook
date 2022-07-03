@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation复合属性</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 速度曲线：linear-匀速 steps(x)-分步动画（步长） */
+            /* animation: change 1s linear; */
+            /* animation: change 1s steps(3); */
+            /* 延迟时间 */
+            /* animation: change 1s steps(3) 3s; */
+            /* 重复动画 */
+            /* animation: change 1s steps(3) 3; */
+            /* 无限循环 */
+            /* animation: change 1s steps(3) infinite; */
+            /* 动画方向: alternate-反向 */
+            /* animation: change 1s infinite alternate; */
+            /* 执行完时状态，默认-backwards:停留在开始前状态 */
+            /* animation: change 1s 4 alternate backwards; */
+            /* forwards: 停留在结束时状态 */
+            animation: change 1s 5 alternate forwards;
+        }
+
+        @keyframes change {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

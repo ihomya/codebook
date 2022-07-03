@@ -1,0 +1,66 @@
+// out: ./
+.box {
+    width: 200px;
+    background-color: skyblue;
+}
+
+/* 文本颜色 */
+.color {
+    color: red;
+    /* 十六进制值 */
+    color: #ff0000;
+    /* RGB值 */
+    color: rgb(255, 0, 0);
+}
+
+/* 文本对齐方式 */
+.text-align {
+
+    /* 水平居中 */
+    .center {
+        text-align: center;
+    }
+
+    /* 靠右对齐 */
+    .right {
+        text-align: right;
+    }
+
+    /* 每一行被展开为宽度相等，左，右外边距是对齐 */
+    .justify {
+        text-align: justify;
+    }
+}
+
+/* 文本修饰 */
+.text-decoration {
+    h3 {
+        text-decoration: line-through;
+    }
+
+    h4 {
+        text-decoration: underline;
+    }
+
+    h5 {
+        text-decoration: overline;
+    }
+}
+
+/* 文本缩进 */
+.text-indent {
+    p {
+        text-indent: 20px;
+
+        &:first-child {
+            // 缩进2个字的大小
+            text-indent: 2em;
+        }
+    }
+
+}
+
+/* 行高 */
+.line-height {
+    line-height: 26px;
+}

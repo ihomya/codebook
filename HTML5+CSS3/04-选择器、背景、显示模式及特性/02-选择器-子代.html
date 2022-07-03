@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 */
+        /* 选中两个a标签 */
+        /* div a {
+            color: red;
+        } */
+
+        /* 只选择div中的子代a */
+        div>a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        父级
+        <a href="#">div中的a</a>
+        <div><a href="#">div中的p中a</a></div>
+
+        <p>
+            <a href="#">div中的p中a</a>
+        </p>
+    </div>
+</body>
+
+</html>

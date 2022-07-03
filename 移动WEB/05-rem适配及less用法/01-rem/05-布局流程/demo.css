@@ -1,0 +1,26 @@
+/* @media (width:320px) {
+    html {
+        font-size: 32px;
+    }
+}
+
+@media (width:375px) {
+    html {
+        font-size: 37.5px;
+    }
+}
+
+@media (width:414px) {
+    html {
+        font-size: 41.4px;
+    }
+} */
+
+.box {
+    /* 68 * 29 */
+    /* width: 68px; */
+    /* 设计稿375，html字号37.5  68/37.5 */
+    width: 1.813rem;
+    height: 0.713rem;
+    background-color: pink;
+}

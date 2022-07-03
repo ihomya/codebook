@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>透视效果</title>
+  <style>
+    body {
+      /* 视距：人眼到屏幕的距离（800-1200） */
+      perspective: 1000px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      transition: all 0.5s;
+    }
+
+    .box:hover {
+      /* 为父级添加perspective属性，实现Z轴位移 */
+      transform: translateZ(200px);
+      transform: translateZ(-200px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

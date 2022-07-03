@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // >= 90  A
+        // >= 80  B
+        // >= 70  C
+        // >= 60  D
+        // < 60   E
+        var score = prompt('请输入您的分数：');
+        var dj;
+        if (score >= 90) {
+            dj = 'A';
+        } else if (score >= 80) {
+            dj = 'B';
+        } else if (score >= 70) {
+            dj = 'C';
+        } else if (score >= 60) {
+            dj = 'D';
+        } else {
+            dj = 'E';
+        }
+        alert('评级: ' + dj);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            height: 100%;
+
+        }
+
+        .box {
+            display: flex;
+            height: 100%;
+        }
+
+        aside {
+            width: 150px;
+            height: 100%;
+            background-image: linear-gradient(#4a93f5, rgba(150, 255, 255, 0.5));
+        }
+
+        aside li {
+            padding-left: 20px;
+            border-bottom: 1px solid #666;
+            height: 30px;
+        }
+
+        aside a,
+        aside p {
+            color: #fff;
+
+            text-decoration: none;
+        }
+
+        aside img {
+            width: 20px;
+            vertical-align: bottom;
+        }
+
+        aside li:hover {
+            background-color: rgba(0, 0, 0, .4);
+
+        }
+
+        aside .web {
+            position: relative;
+        }
+
+        aside .web:hover .web_list {
+            display: block;
+        }
+
+        aside .web .web_list {
+            position: absolute;
+            right: -100px;
+            top: 0;
+            display: none;
+
+            border: 1px solid #ccc;
+            width: 100px;
+            background-image: linear-gradient(#4a93f5, rgba(34, 46, 46, 0.5));
+        }
+
+        iframe {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <aside>
+            <ul>
+                <li>
+                    <img src="https://static.hetaousercontent.com/static/assets/favicon.ico" alt="">
+                    <a href="https://fsoufsou.com" target="myframe">F搜</a>
+                </li>
+                <li>
+                    <img src="https://cn.bing.com/sa/simg/favicon-white-bg-shdw-gra-mg.ico" alt="">
+                    <a href="https://cn.bing.com" target="myframe">必应</a>
+                </li>
+                <li class="web">
+                    <p>前端</p>
+                    <ul class="web_list">
+                        <li>
+                            <img src="http://www.lvyestudy.com/favicon.ico" alt="">
+                            <a href="http://www.lvyestudy.com/" target="myframe">绿叶</a>
+                        </li>
+                        <li>
+                            <a href="https://web.qianguyihao.com/" target="myframe">千古前端</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- frameborder: 边框；scrolling: *true|no 是否显示滚动条; -->
+        <iframe src="https://fsoufsou.com" frameborder="0" name="myframe" scrolling="no"></iframe>
+        <!-- <iframe src="https://fsoufsou.com" frameborder="1" width="400" height="400"  name="myframe"></iframe> -->
+
+    </div>
+
+
+</body>
+
+</html>

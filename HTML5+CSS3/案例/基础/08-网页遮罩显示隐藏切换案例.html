@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 711px;
+            height: 400px;
+            border: 3px solid orange;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 711px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            line-height: 400px;
+        }
+
+        .mask img {
+            vertical-align: middle;
+        }
+
+        .box:hover .mask {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/sed.jpg" alt="">
+        <div class="mask">
+            <img src="./images/arr.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

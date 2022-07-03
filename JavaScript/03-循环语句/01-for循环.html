@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* for(初始化变量;条件表达式;操作表达式){
+            // 循环体
+        } */
+        // 1. 初始化变量 就是声明一个普通变量，通常作为计数器使用
+        // 2. 条件表达式 就是决定每一次循环是否继续执行 就是终止条件
+        // 3. 操作表达式 是每次循环最后执行的代码 经常拥有计数器变量进行更新（递增/递减）
+        for (var i = 1; i <= 100; i++) {
+            console.log('你好啊');
+        }
+
+        // 4. 执行过程
+        /*
+            4.1 首先执行 var i = 1 整个循环里只执行1次
+            4.2 然后执行 i <= 100 看是否满足条件，满足则执行循环体 不满足则退出循环
+            4.3 最后执行 i++
+            4.4 再次判断 4.2 -> 4.3
+        */
+    </script>
+</body>
+
+</html>

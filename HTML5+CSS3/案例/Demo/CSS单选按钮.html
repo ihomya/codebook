@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #222222;
+            padding: 10px;
+            padding-bottom: 0;
+        }
+
+        .header {
+            height: 160px;
+            background-color: #bdffe1;
+            padding: 26px 42px 0;
+            /* margin-bottom: 85px; */
+            box-sizing: border-box;
+        }
+
+        .header h2 {
+            height: 48px;
+            /* background-color: #fff; */
+            /* line-height: 48px; */
+            font-size: 20px;
+        }
+
+        .header p {
+            height: 30px;
+            /* background: pink; */
+            line-height: 30px;
+            /* padding-bottom: 15px; */
+            font-size: 16px;
+            color: #4b3b3c;
+            box-sizing: border-box;
+
+        }
+
+        .header p a {
+            font-weight: 700;
+            color: #232323;
+        }
+
+        .list {
+            width: 506px;
+            height: 450px;
+            /* background-color: pink; */
+            margin: 85px auto 20px;
+        }
+
+        .list h2 {
+            font-size: 24px;
+            color: #aaaaaa;
+        }
+
+        .list ul {
+            display: inline-block;
+            list-style: none;
+            margin-top: 24px;
+            margin-bottom: 80px;
+        }
+
+        .list ul li {
+            width: 506px;
+            height: 100px;
+            /* background-color: pink; */
+            /* line-height: 100px; */
+            border-bottom: 1px solid #333333;
+            padding-top: 34px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-weight: 500;
+            color: #a7a7a7;
+        }
+
+        .list ul li span {
+            margin-left: 24px;
+        }
+
+        .list p {
+            width: 100%;
+            /* background-color: #fff; */
+            color: #aaaaaa;
+            font-size: 13px;
+            margin-bottom: 24px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .list p a {
+            text-decoration: none;
+            color: #aaaaaa;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <h2>Hey! Read Me...</h2>
+            <p>
+                This is an example of what you can do with pure css to style radio buttons or checkboxes. If you are
+                looking
+                a more flexible & mordern way to style radio buttons on forms, take a look at this <a href="">version
+                    with
+                    SVG icons</a>. I
+                also wrote a <a href="">post</a> about it.
+            </p>
+        </div>
+
+        <div class="list">
+            <h2>Your favorite thing in the world:</h2>
+            <ul>
+                <li><label><input type="radio" name="option"><span>Pizza</span></label> </li>
+                <li><label><input type="radio" name="option"><span>Bacon</span></label></li>
+                <li><label><input type="radio" name="option"><span>Cats</span></label></li>
+            </ul>
+            <p>Made with by <a href="https://codepen.io/AngelaVelasquez">Angela Velasquez</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

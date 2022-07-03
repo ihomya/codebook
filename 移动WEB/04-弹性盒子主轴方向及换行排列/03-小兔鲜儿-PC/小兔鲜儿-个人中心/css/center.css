@@ -1,0 +1,192 @@
+.xtx_body {
+    padding: 29px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 侧边栏 */
+.xtx_body .aside {
+    width: 227px;
+    min-height: 500px;
+    background-color: pink;
+}
+
+/* 主体内容 */
+.xtx_body .main {
+    width: 999px;
+    min-height: 500px;
+    /* background-color: skyblue; */
+}
+
+/* 用户概览 */
+.xtx_body .main .overview {
+    display: flex;
+    margin-bottom: 18px;
+    padding: 20px 0;
+    height: 132px;
+    background-color: #fff;
+}
+
+.xtx_body .main .overview div {
+    /* a一行排 */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+
+    text-align: center;
+}
+
+.xtx_body .main .overview div:first-child {
+    border-right: 1px solid #f4f4f4;
+}
+
+.xtx_body .main .overview div img {
+    width: 25px;
+    margin-bottom: 10px;
+}
+
+.xtx_body .main .overview div a:last-child img {
+    width: 18px;
+}
+
+.xtx_body .main .overview div p {
+    font-size: 16px;
+}
+
+.xtx_body .main .overview div span {
+    font-size: 25px;
+    color: #e05e30;
+}
+
+/* 公共面板 */
+.pannel {
+    margin-top: 18px;
+    padding: 18px 28px;
+    background-color: #fff;
+}
+
+.pannel .pannel_title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.pannel .pannel_title h4 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #333;
+    line-height: 21px;
+}
+
+.pannel .pannel_title a {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 订单 */
+.orders .content li {
+    display: flex;
+    margin-bottom: 20px;
+    height: 137px;
+    border: 1px solid #f4f4f4;
+}
+
+.orders .content li:last-child {
+    margin-bottom: 0;
+}
+
+.orders .content li .goods {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 12px 0 14px 12px;
+    margin-right: 120px;
+}
+
+.orders .content li .goods .pic {
+    width: 107px;
+}
+
+.orders .content li .goods .txt {
+    flex: 1;
+    /* 溢出的时候显示省略号 */
+    /* 因为弹性盒子尺寸可以被内容撑开，不换行的文字可以撑开这个盒子的尺寸 */
+    width: 0;
+}
+
+.orders .content li .goods .txt h5 {
+    /* 确定如何向用户发出未显示的溢出内容信号 */
+    /* 默认值clip：在内容区域的极限处截断文本（字符可能被截断） */
+    /* 显示为省略号 */
+    text-overflow: ellipsis;
+    /* 设置元素中空白的处理方式 */
+    white-space: nowrap;
+    overflow: hidden;
+    color: #333;
+    font-size: 16px;
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.orders .content li .goods .txt p {
+    color: #999;
+    font-size: 14px;
+}
+
+.orders .content li .status {
+    width: 120px;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #e05e30;
+}
+
+
+.orders .content li .common {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders .content li .pay {
+
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    width: 200px;
+}
+
+.orders .content li .pay p {
+    font-size: 14px;
+    color: #333;
+}
+
+.orders .content li .pay p:first-child {
+    color: #9a2e1f;
+}
+
+.orders .content li .action {
+    width: 180px;
+}
+
+.orders .content li .action a:first-child {
+    margin-bottom: 10px;
+    border-radius: 2px;
+
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+
+}
+
+/* 主体内容 */
