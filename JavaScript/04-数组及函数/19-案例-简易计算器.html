@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 输入任意两个数的任意算数运算，并弹出运算后的结果
+        /* 
+            1. 弹出输入框：输入两个数的任意算数运算
+            2. 处理字符串
+            3. 计算结果
+            4. 弹出提示框
+        */
+        function getResult(str) {
+            var arr = [];
+            var symbol = '';
+            var num = '';
+            for (var i = 0; i <= str.length; i++) {
+                if (i == str.length) {
+                    arr[arr.length] = num;
+                    break;
+                }
+                if (isNaN(str[i])) {
+                    symbol = str[i];
+                    arr[arr.length] = num;
+                    num = '';
+                    continue;
+                }
+                num += str[i];
+            }
+
+            switch (symbol) {
+                case '+':
+                    return parseFloat(arr[0]) + parseFloat(arr[1]);
+                case '-':
+                    return arr[0] - arr[1];
+                case '*':
+                    return arr[0] * arr[1];
+                case '/':
+                    return arr[0] / arr[1];
+                default: return;
+            }
+        }
+        var str = prompt('请输入计算公式：');
+        var re = getResult(str);
+        alert(re);
+    </script>
+</body>
+
+</html>
