@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1问
+        // console.log(num); // 报错
+        // 2问
+        console.log(num); // undefined
+        var num = 10;
+        // 相当于
+        // var num;
+        // console.log(num);
+        // num = 10;
+        // 3问: 函数会被提升到最前面
+        fn();
+        function fn() {
+            console.log(11);
+        }
+        // 4问
+        /* fun(); // 报错
+        var fun = function(){
+            console.log(333);
+        } */
+        // 函数表达式 调用必须写在函数表达式的下面
+        // 相当于
+        /* var fun;
+        fun();
+        fun = function(){
+            console.log(333);
+        } */
+        /*
+            1. js引擎运行js：
+                1.1 预解析 js引擎会把所有var和function 提升到当前作用域最前面
+                1.2 代码执行 按照代码书写的顺序从上往下执行
+            2. 预解析 : 变量预解析（变量提升）和 函数预解析（函数提升）
+                2.1 变量提升 就是把所有的变量声明提升到当前作用域最前面 不提示赋值
+                2.2 函数提示 就是把所有的函数声明提示到当前作用域最前面 不调用函数
+            
+        */
+    </script>
+</body>
+
+</html>

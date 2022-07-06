@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数：把对象里面一些相同属性和方法抽象出来封装到函数里
+        // 通过构造函数执行重复相同的代码
+
+        // 利用构造函数创建对象
+        // function 构造函数名(){
+        //     this.属性名 = 属性值;
+        //     this.方法名 = function(){}
+        // }
+        // new 构造函数名()
+
+        function Role(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (attack) {
+                console.log(attack);
+            }
+        }
+        var lp = new Role('廉颇', '力量型', 500);
+        console.log(lp.name);
+        console.log(lp.type);
+        lp.attack('近战');
+        var hy = new Role('后裔', '射手型', 100);
+
+        // 1. 构造函数名字首字母要大写
+        // 2. 构造函数不需要return 就可以返回结果
+        // 3. 调用构造函数 必须使用new
+        // 4. 只要new Role() 调用函数就创建一个对象 lp{}
+        // 5. 属性和方法前面必须添加 this
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.全局变量
+        var num = 10;
+        console.log(num);
+        function fn() {
+            console.log(num);
+        }
+        fn();
+        // 2.局部变量
+        // 形参可以看作是局部变量
+        function fun(aru) {
+            var num1 = 10; // 局部变量
+            num2 = 20; // 可视为全局变量,调用函数后才生效
+        }
+        // console.log(num2);
+
+        fun();
+        console.log(num2);
+        // 3. 执行效率
+        // 3.1 全局变量只有在浏览器关闭时才销毁，比较占内存资源
+        // 3.2 局部变量 当执行完毕就会销毁，比较节约资源
+    </script>
+</body>
+
+</html>

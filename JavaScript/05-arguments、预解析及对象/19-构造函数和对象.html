@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 构造函数 泛指的某一大类 类似于java中的类
+        function Role(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            // this.attack = function (attack) {
+            //     console.log(attack);
+            // }
+        }
+        // 2. 对象 特指 是一个具体的事物 廉颇 == {name: '廉颇', type: '力量型', blood: 500}
+        var lp = new Role('廉颇', '力量型', 500);
+        console.log(lp);
+        // 3. 利用构造函数创建对象的过程 称为 对象的实例化
+    </script>
+</body>
+
+</html>
