@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数学对象：PI 最大值 最小值
+        var myMath = {
+            PI: 3.141592653589793,
+            max: function () {
+                if (arguments.length == 0) {
+                    return -Infinity;
+                }
+                var num = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > num) {
+                        num = arguments[i];
+                    }
+                }
+                return num;
+            },
+            min: function () {
+                if (arguments.length == 0) {
+                    return -Infinity;
+                }
+                var num = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < num) {
+                        num = arguments[i];
+                    }
+                }
+                return num;
+            }
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max());
+        console.log(myMath.max(1, 99, 10, 100, 111));
+        console.log(myMath.max(-1, -99, 100));
+
+        console.log(myMath.min());
+        console.log(myMath.min(1, 99, 10, 100, 111));
+        console.log(myMath.min(-1, -99, 100));
+    </script>
+</body>
+
+</html>

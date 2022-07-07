@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Math对象随机数方法 random() 返回一个随机的小数 0 =< x < 1
+        // 2. 这个方法没有参数
+        // 3. 代码验证
+        console.log(Math.random());
+        // 4. 我们想要得到两个数之间的随机整数 并且 包含这2个整数
+        // Math.floor(Math.random() * (max - min + 1)) + min
+        /* 
+            0 =< x < 1;
+            Math.random() * (max+1) - Math.random() * min + min 
+        */
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(1, 10));
+        /*
+            0 =< x < 1;
+            x * (10 - 1 + 1) + 1
+        */
+        // 5. 随机点名
+        var arr = ['a', 'b', 'c', 'd']
+        console.log(arr[getRandom(0, arr.length - 1)]);
+    </script>
+</body>
+
+</html>

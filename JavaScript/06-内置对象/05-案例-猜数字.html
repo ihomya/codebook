@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        /* var random = getRandom(1, 10);
+        do {
+            var num = prompt('你来猜，输入1~10之间的整数')
+            if (num < random) {
+                alert('猜小了，继续猜');
+            } else if (num > random) {
+                alert('猜大了，继续猜');
+            } else {
+                alert('猜对了');
+                break;
+            }
+        } while (true) */
+        // 要求用户猜1~50之间的数，只有10次机会
+        var random = getRandom(1, 50);
+        for (var i = 9; i >= 0; i--) {
+            if (i == 0) {
+                alert('抱歉，你猜错了，答案是：' + random)
+                break;
+            }
+            var num = prompt('你来猜，输入1~50之间的整数');
+            if (num < random) {
+                alert('猜小了，你还有' + i + '次机会！');
+            } else if (num > random) {
+                alert('猜大了，你还有' + i + '次机会！');
+            } else {
+                alert('猜对了');
+                break;
+            }
+        }
+        /*
+        var i = 9;
+        do {
+            if (i == 0) {
+                alert('抱歉，你猜错了，答案是：' + random)
+                break;
+            }
+            var num = prompt('你来猜，输入1~50之间的整数')
+            if (num < random) {
+                alert('猜小了，你还有' + i + '次机会！');
+                i--;
+            } else if (num > random) {
+                alert('猜大了，你还有' + i + '次机会！');
+                i--;
+            } else {
+                alert('猜对了');
+                break;
+            }
+        } while (true) 
+        */
+    </script>
+</body>
+
+</html>
