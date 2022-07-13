@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" placeholder="手机" class="search-input"> -->
+    <input type="text" value="手机" class="search-input" style="color: #ccc">
+    <script>
+        // 1. 获取元素
+        var input = document.querySelector('input');
+        // 2. 注册事件 处理程序 获得焦点onfocus 失去焦点onblur
+        input.onfocus = function () {
+            // this.placeholder = '';
+            if (this.value === '手机') {
+                this.value = '';
+            }
+            this.style.color = '#333';
+        }
+
+        input.onblur = function () {
+            // this.placeholder = '手机';
+            if (this.value === '') {
+                this.value = '手机';
+
+            }
+            this.style.color = '#ccc';
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            width: 80px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+
+            text-align: center;
+            font-size: 10px;
+            font-family: '微软雅黑';
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .box .close-btn {
+            position: absolute;
+            top: 0;
+            left: -15px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 14px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="./images/tao.png" alt="">
+        <i class="close-btn">X</i>
+    </div>
+    <script>
+        // 1. 获取元素
+        var box = document.querySelector('.box');
+        var btn = document.querySelector('.close-btn');
+        // 2. 注册事件 处理程序
+        btn.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

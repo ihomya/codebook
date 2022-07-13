@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        console.log(str.length);
+        console.log(str[0]);
+        console.log(str[9]);
+        console.log(str.indexOf('l') === -1); // true
+        while (str.indexOf('g') !== -1) {
+            str = str.replace('g', '22');
+        }
+        console.log(str);
+        console.log(str.slice(1, 6)); // baasd
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var c = str.charAt(i);
+            obj[c] ? obj[c]++ : obj[c] = 1;
+        }
+        var char = '';
+        var num = 0;
+        for (var key in obj) {
+            if (obj[key] > num) {
+                char = key;
+                num = obj[key];
+            }
+        }
+        console.log(char);
+        console.log(num);
+    </script>
+</body>
+
+</html>

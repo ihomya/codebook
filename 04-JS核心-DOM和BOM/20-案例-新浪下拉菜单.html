@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 80px;
+            height: 35px;
+            border: 1px solid #ccc;
+            color: #333;
+
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .box:hover {
+            color: #ff8500;
+            background-color: #aaa;
+        }
+
+        .box .dropdown {
+            display: none;
+
+            position: absolute;
+            left: -1px;
+            top: 35px;
+            width: 80px;
+            height: 92px;
+            border: 1px solid #ff8500;
+            border-bottom: none;
+            border-top: none;
+        }
+
+        .box .dropdown a {
+            display: block;
+            height: 30px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ff8500;
+        }
+
+        .box .dropdown a:hover {
+            color: #ff8500;
+            background-color: #ff850044;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        微博
+        <div class="dropdown">
+            <a href="#">私信</a>
+            <a href="#">评论</a>
+            <a href="#">@我</a>
+        </div>
+    </div>
+    <script>
+        // 1. 获取元素
+        var box = document.querySelector('.box');
+        var dropdown = document.querySelector('.dropdown');
+        // 2. 注册鼠标经过事件
+        box.onmouseover = function () {
+            dropdown.style.display = 'block';
+        }
+        box.onmouseleave = function () {
+            dropdown.style.display = 'none';
+
+        }
+    </script>
+</body>
+
+</html>

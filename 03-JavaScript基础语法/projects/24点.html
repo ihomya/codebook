@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  一副扑克牌
+        var poker_list = [['1', 4], ['2', 4], ['3', 4], ['4', 4], ['5', 4], ['6', 4],
+        ['7', 4], ['8', 4], ['9', 4], ['10', 4], ['10', 4], ['10', 4],
+        ['10', 4]]
+        // 获取随机数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // 简易计算器
+        function getResult(str) {
+            var arr = [];
+            var symbol = '';
+            var num = '';
+            for (var i = 0; i <= str.length; i++) {
+                if (i == str.length) {
+                    arr[arr.length] = num;
+                    break;
+                }
+                if (isNaN(str[i])) {
+                    symbol = str[i];
+                    arr[arr.length] = num;
+                    num = '';
+                    continue;
+                }
+                num += str[i];
+            }
+
+            switch (symbol) {
+                case '+':
+                    return parseFloat(arr[0]) + parseFloat(arr[1]);
+                case '-':
+                    return arr[0] - arr[1];
+                case '*':
+                    return arr[0] * arr[1];
+                case '/':
+                    return arr[0] / arr[1];
+                default: return;
+            }
+        }
+
+        // 二叉树分割
+        function str2math(str) {
+
+        }
+
+
+
+
+
+        var poker1 = poker_list[getRandom(0, 13)];
+        var poker2 = poker_list[getRandom(0, 13)];
+        var poker3 = poker_list[getRandom(0, 13)];
+        var poker4 = poker_list[getRandom(0, 13)];
+        var equation = prompt('当前扑克牌：' + pockr1 + '\n' + pockr2 + '\n' + pockr3 + '\n' + pockr4 + '\n' + '请输入计算公式');
+    </script>
+</body>
+
+</html>

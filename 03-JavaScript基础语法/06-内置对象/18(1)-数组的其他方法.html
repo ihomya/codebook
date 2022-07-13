@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. concat() 用于合并两个或多个数组。
+        // (1) 不改变原数组，而是返回一个新数组
+        var arr1 = ['a', 'b', 'c'];
+        var arr2 = ['d', 'e', 'f'];
+        var arr3 = arr1.concat(arr2);
+
+        console.log(arr3);
+        // 2. slice() 数组截取
+        // (1) 不改变原数组，而是返回一个新数组
+        // (2) 新对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）
+        var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+        console.log(animals.slice(2)); // 从第2个开始["camel", "duck", "elephant"]
+
+        console.log(animals.slice(2, 4)); // ["camel", "duck"]
+
+        console.log(animals.slice(1, 5));//["bison", "camel", "duck", "elephant"]
+
+        console.log(animals.slice(-2)); // 截取后2个 ["duck", "elephant"]
+
+        console.log(animals.slice(2, -1));// 第二个到倒数第二个 ["camel", "duck"]
+
+        console.log(animals.slice()); // ["ant", "bison", "camel", "duck", "elephant"]
+
+        // 3. splice() 通过 删除或替换 原元素 或者 原地添加新的元素来修改数组
+        // (1) 以数组形式返回被修改的内容。
+        // (2) 会改变原数组
+        // (3) 返回修改后的数组
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb'); // 从索引1处开始删除0个元素 并插入新元素'Feb'
+        console.log(months); // ["Jan", "Feb", "March", "April", "June"]
+
+        months.splice(4, 1, 'May', "6"); // 从索引1处开始删除1个元素 并插入新元素 'May' '6'
+        console.log(months);// ["Jan", "Feb", "March", "April", "May"]
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 查找出现次数最多的字符 并 统计次数
+        /* 
+            1. 核心算法：利用 charAt() 遍历这个字符串
+            2. 把每个字符都存储给对象，没有就为1，有就+1
+            3. 遍历对象，得到最大值和该字符
+        */
+        var str = 'abcoefoxyozzopp';
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var c = str.charAt(i);
+            obj[c] ? obj[c]++ : obj[c] = 1;
+        }
+        var char = '';
+        var num = 0;
+        for (var key in obj) {
+            if (obj[key] > num) {
+                char = key;
+                num = obj[key];
+            }
+        }
+        console.log(char);
+        console.log(num);
+    </script>
+</body>
+
+</html>

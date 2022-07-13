@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            background-color: pink;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示当前系统时间</button>
+    <div>time</div>
+    <p>123</p>
+    <script>
+        // 当我们点击了按钮 div里面内容替换为时间
+        // 1. 获取元素
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 2. 注册事件
+        btn.onclick = function () {
+            div.innerText = getDate();
+        }
+
+        function getDate() {
+            // 格式化日期 年月日
+            var date = new Date();
+            var year = date.getFullYear() // 返回当前日期的年 2022
+            var month = date.getMonth() + 1; // 返回月份小1个月 +1
+            var dates = date.getDate(); // 返回的是 几号 8
+            var day = date.getDay(); // 周一返回的是1 周六返回的是6 周日返回的是0
+            // 打印 2022年7月8号 星期五
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            return '今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+        }
+
+        // 直接显示
+        var p = document.querySelector('p');
+        p.innerText = getTime();
+
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+    </script>
+</body>
+
+</html>

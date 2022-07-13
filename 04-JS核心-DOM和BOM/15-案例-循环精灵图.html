@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+
+            width: 100px;
+            height: 60px;
+
+            list-style: none;
+        }
+
+        li {
+            width: 24px;
+            height: 24px;
+            background-color: pink;
+            background: url('./images/sprite.png') no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 1. 获取元素
+        var lis = document.querySelectorAll('li');
+        // 2. 遍历0元素
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundPosition = '0 -' + 44 * i + 'px';
+        }
+    </script>
+</body>
+
+</html>
