@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table thead {
+            background-color: rgb(86, 86, 253);
+            color: #fff;
+        }
+        
+        table thead tr {
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>商品</th>
+                <th>价格</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone 10</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone 10</td>
+                <td>100 0</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone 10</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iphone 10</td>
+                <td>1000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 1. 获取元素
+        var headIpt = document.querySelector('thead').querySelector('input');
+        var bodyIpts = document.querySelector('tbody').querySelectorAll('input');
+        // 2. 注册事件
+        // (1) 全选框 点击时行选择框变化
+        headIpt.onclick = function() {
+                for (var i = 0; i < bodyIpts.length; i++) {
+                    bodyIpts[i].checked = this.checked;
+                }
+            }
+            // (2) 行 选择框 点击时 判断是否为全选
+        for (var i = 0; i < bodyIpts.length; i++) {
+            bodyIpts[i].onclick = function() {
+                var checked = true;
+                for (var i = 0; i < bodyIpts.length; i++) {
+                    checked = checked && bodyIpts[i].checked;
+                    if (!checked) {
+                        break;
+                    } // 退出循环
+                }
+                // console.log(checked);
+                headIpt.checked = checked;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url('./images/1.jpg') no-repeat;
+        }
+        
+        .box {
+            margin: 100px auto;
+            width: 700px;
+            height: 100px;
+        }
+        
+        .box img {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/1.jpg" alt="">
+        <img src="./images/2.jpg" alt="">
+        <img src="./images/3.jpg" alt="">
+        <img src="./images/4.jpg" alt="">
+    </div>
+    <script>
+        // 1. 获取元素 body img
+        var body = document.body;
+        var imgs = document.querySelector('.box').querySelectorAll('img');
+        // 2. 注册事件
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

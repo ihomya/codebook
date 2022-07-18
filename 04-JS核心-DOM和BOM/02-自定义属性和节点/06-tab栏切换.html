@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tab {
+            width: 1000px;
+            margin: 100px auto;
+        }
+        
+        .tab-list {
+            height: 30px;
+            background-color: #ccc;
+            border: 1px solid #000;
+        }
+        
+        .tab-list ul {
+            list-style: none;
+        }
+        
+        .tab-list li {
+            display: inline-block;
+            /* border-right: 1px solid #000; */
+            padding: 0 10px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        
+        .tab-list li.current {
+            background-color: rgb(248, 21, 21);
+            color: #fff;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab-con">
+            <div class="item" style="display: block;">商品介绍模块内容</div>
+            <div class="item">规格与包装模块内容</div>
+            <div class="item">售后保障模块内容</div>
+            <div class="item">商品评价模块内容</div>
+            <div class="item">手机社区模块内容</div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        var lis = document.querySelector('.tab-list').querySelectorAll('li');
+        var items = document.querySelector('.tab-con').querySelectorAll('.item');
+        console.log(items);
+        // 2. 注册事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i); // 添加自定义属性，让对应内容模块显示
+
+            lis[i].onclick = function() {
+                // 2.1. 清除默认显示
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = '';
+                }
+                // 2.2. 设置选中类名
+                this.className = 'current';
+
+                // 2.3. 清除默认显示模块内容
+                for (var j = 0; j < items.length; j++) {
+                    items[j].style.display = 'none';
+                }
+                // 2.4. 设置对应模块
+
+                var index = this.getAttribute('index'); // 获取对应模块索引
+
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
