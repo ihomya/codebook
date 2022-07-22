@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">关闭定时器</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        stop.disabled = true;
+
+        var timer = null; // 全局变量 null空对象
+        begin.addEventListener('click', function () {
+            clearInterval(timer); // 防止多次添加定时器
+            timer = setInterval(function () {
+                console.log('hi');
+            }, 1000);
+            this.disabled = true;
+            stop.disabled = false;
+
+        });
+        stop.addEventListener('click', function () {
+            clearInterval(timer);
+            this.disabled = true;
+            begin.disabled = false;
+        })
+    </script>
+</body>
+
+</html>

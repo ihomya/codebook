@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        /* window.onload = function () {
+            document.write('<div>123</div>')
+        } */
+        // 三种创建元素方式区别
+        // 1. document.write() 创建元素 如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        /* var btn = document.querySelector('button');
+        btn.onclick = function () {
+            document.write('<div>123</div>')
+        } */
+        // 2. innerHTML 创建元素 结构稍微复杂
+        var inner = document.querySelector('.inner');
+        var arr = [];
+        var i_d1 = +new Date();
+        for (var i = 0; i <= 1000; i++) {
+            // (1) 拼接字符串方式，效率低
+            // inner.innerHTML += '<div style="width:100px;height=2px;border:1px solid blue"></div>';
+            // (2) 数组转字符串,效率更高
+            arr.push('<div style="width:100px;height=2px;border:1px solid blue"></div>')
+        }
+        inner.innerHTML = arr.join('');
+        var i_d2 = +new Date();
+        console.log(i_d2 - i_d1);
+        // 3. createElement() 创建多个元素效率稍微低一点，但结构更清晰
+        var create = document.querySelector('.create');
+        var c_d1 = +new Date();
+        for (var i = 0; i <= 1000; i++) {
+            var div = document.createElement('div');
+            div.style.width = '100px';
+            div.style.height = '2px';
+            div.style.border = '1px solid red';
+            create.appendChild(div)
+        }
+        var c_d2 = +new Date();
+        console.log(c_d2 - c_d1);
+    </script>
+</body>
+
+</html>

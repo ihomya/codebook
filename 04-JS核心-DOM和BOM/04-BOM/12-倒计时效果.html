@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            margin: 100px auto;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour')
+        var minute = document.querySelector('.minute')
+        var second = document.querySelector('.second')
+
+        // var end = prompt('请输入结束时间');
+        end = +new Date("2022-7-21 17:00:00");
+        countDown(); // 先调用一次函数，防止第一次刷新页面有空格
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var now = +new Date();
+            var times = (end - now) / 1000 // 剩余时间总秒数 
+            h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+
+            s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>
