@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点击后span盒子移动500</button>
+    <button class="btn800">点击后span盒子移动800</button>
+    <span></span>
+    <script>
+        // 缓动动画函数封装obj目标对象 target 目标位置
+        // 思路：
+        // 1. 让盒子每次移动的距离慢慢变小， 速度就会慢慢落下来。
+        // 2. 核心算法：(目标值 - 现在的位置) / 10 做为每次移动的距离 步长
+        // 3. 停止的条件是： 让当前盒子位置等于目标位置就停止定时器
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            // if (obj.timer) { return; } 
+            obj.timer = setInterval(() => {
+                // 步长值写到定时器的里面
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - obj.offsetLeft) / 10;
+                // 向前移动则向上取值，向后移动则向下取整
+                var step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                console.log(step);
+                if (obj.offsetLeft == target) {
+                    // 停止动画 本质停止计时器
+                    clearInterval(obj.timer);
+                }
+                // 把每次移动的距离改为 一个慢慢变小的值
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+            }, 15);
+
+        }
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        })
+
+        // 匀速动画 就是 盒子是当前的这个位置 + 固定的值
+        // 缓动动画 就是 盒子当前位置 + 变化的值 （(目标值 - 现在的位置) / 10）
+    </script>
+</body>
+
+</html>

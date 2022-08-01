@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+        内容内容
+    </div>
+    <script>
+        // scroll 系列
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight); // 盒子真实高度 也不包含边框
+        console.log(div.clientHeight); // 盒子高度
+        // scroll滚动事件当滚动条发生变化会触发的事件
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop); // 卷去的高度
+        })
+    </script>
+</body>
+
+</html>

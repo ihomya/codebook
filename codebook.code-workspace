@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"editor.accessibilitySupport": "off"
+		"editor.accessibilitySupport": "off",
+		"liveServer.settings.multiRootWorkspaceName": "codebook"
 	}
 }

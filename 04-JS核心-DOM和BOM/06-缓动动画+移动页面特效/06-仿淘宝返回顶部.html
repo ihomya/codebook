@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* position: relative; */
+            margin: 0 auto;
+            height: 2000px;
+            width: 1000px;
+            background-color: skyblue;
+        }
+
+        .box .header {
+            height: 100px;
+            background-color: pink;
+        }
+
+        .banner {
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .main {
+            height: 100px;
+            background-color: blue;
+        }
+
+        .aside {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 500px;
+        }
+
+        .aside li {
+            height: 50px;
+            width: 50px;
+            list-style: none;
+            border: 1px solid #000;
+        }
+
+        .aside li.goback {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header"></div>
+        <div class="banner"></div>
+        <div class="main"></div>
+        <div class="aside">
+            <ul>
+                <li></li>
+                <li></li>
+                <li class="goback"><a href="javascript:;">返回顶部</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 1. 获取元素
+        var slidebar = document.querySelector('.aside');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main')
+        // banner.offsetTop 就是被卷去头部的大小 写在滚动事件外部
+        var bannerTop = banner.offsetTop;
+        // sidebar 固定定位后的top值
+        var slidebarTop = slidebar.offsetTop - bannerTop;
+        var mainTop = main.offsetTop;
+        var goback = slidebar.querySelector('.goback');
+        // 2. 页面滚动事件
+        document.addEventListener('scroll', function () {
+            // window.pageYoffset 页面被卷去的头部
+            // 3. 当我们页面被卷去的头部大于等于 100 时侧边栏改为固定定位
+            if (window.pageYOffset >= bannerTop) {
+                slidebar.style.position = 'fixed';
+                slidebar.style.top = slidebarTop + 'px';
+            } else {
+                slidebar.style.position = 'absolute';
+                slidebar.style.top = '300px';
+            }
+            // 4. 当我们页面滚动到main盒子，就显示goback
+            if (window.pageYOffset >= mainTop) {
+                goback.style.display = 'block'
+            } else {
+                goback.style.display = 'none';
+            }
+        });
+        // 5. 点击返回顶部
+        goback.addEventListener('click', function () {
+            // window.scroll(0, 0);
+            // 窗口滚动，所以对象为window
+            animate(window, 0)
+        })
+
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                // 步长值写到定时器的里面
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - window.pageYOffset) / 10;
+                // 向前移动则向上取值，向后移动则向下取整
+                var step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // console.log(step);
+                if (window.pageYOffset == target) {
+                    // 停止动画 本质停止计时器
+                    clearInterval(obj.timer);
+                    // 回调函数写到定时器结束里面 
+                    callback && callback(); // 逻辑中断
+                }
+                // 把每次移动的距离改为 一个慢慢变小的值
+                // obj.style.left = obj.offsetLeft + step + 'px';
+                window.scroll(0, window.pageYOffset + step);
+
+            }, 15);
+
+        }
+
+    </script>
+</body>
+
+</html>

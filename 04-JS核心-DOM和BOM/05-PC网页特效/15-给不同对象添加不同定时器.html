@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击后span盒子移动</button>
+    <div></div>
+    <span></span>
+    <script>
+        function animate(obj, target) {
+            // 当我们不断点击按钮 这个元素速度会越来越快 因为开启了太多定时器
+            // 解决方案就是 让我们元素只有一个定时器执行
+            // 先清除以前的定时器，只保留一个定时器执行
+            clearInterval(obj.timer);
+            // if (obj.timer) { return; }
+
+            // 为不同对象添加不同定时器 通过给对象添加属性实现
+            obj.timer = setInterval(() => {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画 本质停止计时器
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                }
+            }, 30);
+
+        }
+        var div = document.querySelector('div');
+        animate(div, 300);
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            animate(span, 300);
+        })
+    </script>
+</body>
+
+</html>

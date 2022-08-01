@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div><span></span>
+    <script>
+        // obj 目标对象 target 目标位置
+        function animate(obj, target) {
+            var timer = setInterval(() => {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画 本质停止计时器
+                    clearInterval(timer);
+                }
+                obj.style.left = obj.offsetLeft + 5 + 'px';
+            }, 30);
+
+        }
+        var div = document.querySelector('div');
+        animate(div, 300);
+        var span = document.querySelector('span');
+        animate(span, 300);
+    </script>
+</body>
+
+</html>

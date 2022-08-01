@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .focus {
+            position: relative;
+            margin: 50px auto 0;
+            width: 721px;
+            height: 455px;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .focus ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+        }
+
+        .focus ul li {
+            float: left;
+        }
+
+        .focus ul li img {
+            vertical-align: middle;
+        }
+
+        .arrow-l,
+        .arrow-r {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .arrow-r {
+            right: 0;
+        }
+
+        .circle {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* width: 100px; */
+            height: 12px;
+            /* background-color: pink; */
+
+        }
+
+        .circle li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            border: 1px solid #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .circle li:last-child {
+            margin-right: 0;
+        }
+
+        .circle li.current {
+            background-color: #fff;
+        }
+    </style>
+    <script src="./animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            // 1. 获取元素
+            var focus = document.querySelector('.focus');
+            var arrow_l = document.querySelector('.arrow-l')
+            var arrow_r = document.querySelector('.arrow-r');
+            // 获取盒子宽度
+            var focusWidth = focus.offsetWidth;
+            // 2. 鼠标经过focus 箭头显示隐藏
+            focus.addEventListener('mouseenter', function () {
+                arrow_l.style.display = 'block';
+                arrow_r.style.display = 'block';
+                clearInterval(timer);
+                timer = null; // 停止自动播放
+            })
+            focus.addEventListener('mouseleave', function () {
+                arrow_l.style.display = 'none';
+                arrow_r.style.display = 'none';
+                timer = setInterval(function () {
+                    // 手动调用事件
+                    arrow_r.click();
+                }, 2000);
+            });
+            // 3. 动态生成小圆圈 有几张图就生成几个
+            var ul = focus.querySelector('ul');
+            var ol = focus.querySelector('ol');
+            for (var i = 0; i < ul.children.length; i++) {
+                // 创建一个li
+                var li = document.createElement('li');
+
+                // 记录当前小圆圈的索引号，通过添加自定义属性 index
+                li.setAttribute('index', i);
+
+                // 添加li到ol
+                ol.appendChild(li);
+                // 4. 注册点击事件 清除所有小li的current类名 给点击的li添加current
+                li.addEventListener('click', function () {
+                    for (var i = 0; i < ol.children.length; i++) {
+                        ol.children[i].className = '';
+                    }
+                    this.className = 'current';
+                    // 5. 点击小圆圈，移动图片，通过移动ul
+                    // ul的移动距离 小圆圈的索引号 乘以 图片的宽度 注意是负值
+                    // 获取index值
+                    var index = this.getAttribute('index');
+                    num = index;
+                    circle = index;
+                    animate(ul, - index * focusWidth);
+                });
+            };
+            // 把ol里面的第一个li设置类名为 current
+            ol.children[0].className = 'current';
+            // 6. 克隆第一张图
+            var first = ul.children[0].cloneNode(true);
+            ul.appendChild(first);
+            // 7. 点击右侧按钮 图片滚动一张
+            var num = 0;
+            // circle 控制小圆圈播放
+            var circle = 0;
+            // 节流阀: 防止点击过快
+            var flag = true;
+            arrow_r.addEventListener('click', function () {
+                if (flag) {
+                    flag = false; // 关闭节流阀
+                    // 如果走到最后一张，ul要快速复原 将left设置为0 实现无缝滚动
+                    if (num == ul.children.length - 1) {
+                        ul.style.left = 0;
+                        num = 0;
+                    }
+                    num++;
+                    animate(ul, - num * focusWidth, function () {
+                        flag = true; // 打开节流阀
+                    });
+                    // 8. 点击按钮 自增1
+                    circle++;
+                    if (circle == ol.children.length) {
+                        circle = 0;
+                    }
+                    circleChange();
+                }
+            });
+            arrow_l.addEventListener('click', function () {
+                if (flag) {
+                    flag = false;
+                    // 如果走到最后一张，ul要快速复原 将left设置为0 实现无缝滚动
+                    if (num == 0) {
+                        num = ul.children.length - 1;
+                        ul.style.left = -num * focusWidth + 'px';
+                    }
+                    num--;
+                    animate(ul, - num * focusWidth, function () {
+                        flag = true;
+                    });
+                    // 8. 点击按钮 自增1
+                    circle--;
+                    if (circle < 0) {
+                        circle = ol.children.length - 1;
+                    }
+                    circleChange();
+                }
+
+            });
+            // 小圆圈排他函数
+            function circleChange() {
+                // 小圆圈 排他
+                for (var i = 0; i < ol.children.length; i++) {
+                    ol.children[i].className = '';
+                }
+                ol.children[circle].className = 'current';
+            }
+            // 9. 自动播放 与右箭头按钮功能相同
+            var timer = setInterval(function () {
+                // 手动调用事件
+                arrow_r.click();
+            }, 2000);
+        })
+    </script>
+</head>
+
+<body>
+    <div class="focus">
+        <!-- 左侧按钮 -->
+        <a href="javascript:void(0);" class="arrow-l">👈</a>
+        <!-- 右侧按钮 -->
+        <a href="javascript:void(0);" class="arrow-r">👉</a>
+        <!-- 核心滚动区域 -->
+        <ul>
+            <li><a href="javascript:void(0);"><img src="./upload/focus.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="./upload/focus1.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="./upload/focus2.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="./upload/focus3.jpg" alt=""></a></li>
+        </ul>
+        <!-- 小圆圈 -->
+        <ol class="circle">
+        </ol>
+    </div>
+</body>
+
+</html>
