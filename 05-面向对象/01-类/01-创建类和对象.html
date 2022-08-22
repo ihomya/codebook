@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 通过 class 创建类
+        class Star {
+            // 通过 constructor 构造函数来传递参数，同时返回实例对象
+            constructor(uname, age) {
+                this.uname = uname; // 公有属性
+                this.age = age;
+            }
+            // 添加方法
+            sing(song) {
+                console.log(song + '原唱：' + this.uname);
+            }
+        }
+        // 2. 通过 new 关键词实例化对象
+        var ldh = new Star('刘德华', 18); // 此时会自动调用构造函数
+        var zxy = new Star('张学友', 20);
+        console.log(ldh.uname);
+        console.log(zxy.uname);
+        ldh.sing('冰雨');
+        zxy.sing('李香兰');
+    </script>
+</body>
+
+</html>
