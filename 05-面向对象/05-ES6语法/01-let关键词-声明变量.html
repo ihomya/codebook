@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            1. let 关键词用于声明局部变量
+            2. 在{}中使用let声明变量才具有块级作用域
+            3. let声明变量可以防止循环变量变成全局变量
+            4. 使用let声明变量 没有变量提升
+            5. 暂时性死区：{}作用域中使用let声明的变量 不受外部同名变量影响 
+        */
+        /* 代码验证1 */
+        let a = 10;
+        console.log(a);
+        /* 代码验证2 */
+        if (true) {
+            let b = 20;
+            var c = 30;
+        }
+        console.log(c);
+        // console.log(b);
+        // 代码验证3
+        for (var i = 0; i < 2; i++) { }
+        console.log(i);
+        // for (let d = 0; d < 2; d++) { }
+        // console.log(d);
+
+        // 代码验证4
+        // console.log(abc);
+        // let abc = 'abc';
+
+        // 代码验证5
+        var num = 123;
+        if (true) {
+            num = 1;
+            // console.log(num);
+            let num = 0; // 在块级作用域下 全局绑定
+        }
+        console.log(num);
+    </script>
+</body>
+
+</html>

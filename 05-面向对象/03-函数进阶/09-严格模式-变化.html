@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 'use strict';
+        // 1. 变量必须先声明再使用
+        // num = 10;
+        // console.log(num);
+        var num = 10;
+        console.log(num);
+        // 2. 不能随意删除已经声明好的变量
+        // delete num;
+        // 3. 严格模式下，全局作用域中函数中的this是 undefined
+        function fn() {
+            console.log(this);
+        }
+        fn();
+        // 4. 严格模式下，如果构造函数不加new调用，this会报错
+        function Star() {
+            this.sex = 'man'; // 普通模式下this指向window
+        }
+        // Star();
+        // console.log(window.sex);
+        var ldh = new Star();
+        console.log(ldh);
+        // 5. 定时器中this还是指向window
+        setTimeout(() => {
+            console.log(this);
+        }, 1000);
+        // 6. 严格模式下，函数里面参数不可重名,会报错
+        function fn(a, a) {
+            console.log(a + a);
+        }
+        fn(1, 2); // 普通模式下也会被覆盖
+        // 7. 在非函数代码块声明函数
+    </script>
+</body>
+
+</html>

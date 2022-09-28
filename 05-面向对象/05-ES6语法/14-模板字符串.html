@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let result = {
+            name: 'zhangsan',
+            age: 10
+        }
+        let html = `
+            <div>
+                <span>${result.name}</span>   
+                <span>${result.age}</span>   
+            </div>
+        `;
+        console.log(html);
+        const fn = () => {
+            return '我是fn函数';
+        }
+        let str = `你好，${fn()}`;
+        console.log(str); // 模板字符串中可以调用函数，内容为其返回值
+    </script>
+</body>
+
+</html>

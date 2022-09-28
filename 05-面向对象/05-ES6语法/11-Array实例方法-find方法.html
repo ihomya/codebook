@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [{
+            id: 1,
+            name: 'zhangsan'
+        }, {
+            id: 2,
+            name: 'lisi'
+        }];
+        // find方法 用于查找是否有满足添加的元素，如果有则返回该元素，否则返回undefined
+        let target = arr.find(item => item.id == 2);
+        let target1 = arr.find(item => item.id == 3);
+        console.log(target);
+        console.log(target1);
+
+    </script>
+</body>
+
+</html>

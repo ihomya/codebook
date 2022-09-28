@@ -6,10 +6,10 @@
     4. 双击tab项可以修改编辑
     5. 双击内容项可以进行编辑
 */
-var that;
+// var that;
 class Tab {
     constructor(id) {
-        that = this;
+        // that = this;
         // 获取元素
         this.main = document.querySelector(id);
         // 添加tab按钮
@@ -25,13 +25,13 @@ class Tab {
     init() {
         this.updateNode();
         // init 初始化操作让相关的元素绑定事件
-        this.add.onclick = this.addTab;
+        this.add.onclick = this.addTab.bind(this.add, this);
         for (var i = 0; i < this.lis.length; i++) {
             this.lis[i].index = i; // 自定义属性index 存储索引号
-            this.lis[i].onclick = this.toggleTab;
-            this.remove[i].onclick = this.removeTab;
-            this.spans[i].ondblclick = this.editTab;
-            this.sections[i].ondblclick = this.editTab;
+            this.lis[i].onclick = this.toggleTab.bind(this.lis[i], this);
+            this.remove[i].onclick = this.removeTab.bind(this.remove[i], this);
+            this.spans[i].ondblclick = this.editTab.bind(this.spans[i], this);
+            this.sections[i].ondblclick = this.editTab.bind(this.sections[i], this);
         }
     }
     // 获取所有li和section
@@ -46,7 +46,7 @@ class Tab {
         this.spans = document.querySelectorAll('.fisrstnav ul span:first-child');
     }
     // 1. 切换功能
-    toggleTab() {
+    toggleTab(that) {
         // 这里的this指向的是每个li
         // console.log(this.index);
         that.clearClass();
@@ -61,7 +61,7 @@ class Tab {
         }
     }
     // 2. 添加功能
-    addTab() {
+    addTab(that) {
         that.clearClass();
         // (1) 创建li元素和section元素
         var random = Math.random();
@@ -73,7 +73,7 @@ class Tab {
         that.init(); // 为新建tab项初始化相关操作
     }
     // 3. 删除功能
-    removeTab(e) {
+    removeTab(that, e) {
         e.stopPropagation(); // 防止冒泡 触发li点击事件
         var index = this.parentNode.index;
         console.log(index);
@@ -88,7 +88,7 @@ class Tab {
         that.lis[index] && that.lis[index].click(); // 手动调用点击事件
     }
     // 4. 修改功能
-    editTab() {
+    editTab(that) {
         if (!that.flag) {
             that.flag = true;
             var str = this.innerHTML;

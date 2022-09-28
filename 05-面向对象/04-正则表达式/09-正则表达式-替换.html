@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="message" cols="30" rows="10"></textarea><button>提交</button>
+    <div></div>
+    <script>
+        // 替换 replace
+        // var str = 'andy和red';
+        // // var newStr = str.replace('andy','baby');
+        // var newStr = str.replace(/andy/, 'baby');
+        // console.log(newStr);
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        var msg = document.querySelector('#message');
+        btn.onclick = function () {
+            // div.innerHTML = msg.value.replace(/gay/, '**');
+            div.innerHTML = msg.value.replace(/gay/g, '**');
+            // g为全局匹配 i为忽略大小写 gi则是满足两者
+        }
+    </script>
+</body>
+
+</html>

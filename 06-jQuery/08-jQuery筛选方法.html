@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <div class="grandpa">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+    <div class="nav">
+        <p>this is p</p>
+        <div>
+            <p>this is pp</p>
+        </div>
+    </div>
+</body>
+<script>
+    // 注意：都是方法 带括号
+    $(() => {
+        // 1. 父 parent() 返回的是最近一级的父级 亲爸爸
+        console.log($('.son').parent());
+        // 2. 子
+        // （1）亲儿子 children() 子代选择器 ul>li
+        $('.nav').children('p').css('color', 'red');
+        // (2) 选择所有子孙级 find()
+        $('.nav').find("p").css('color', 'pink');
+        // 3. 兄
+    })
+</script>
+
+</html>

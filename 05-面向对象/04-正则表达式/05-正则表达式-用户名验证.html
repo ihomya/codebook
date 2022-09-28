@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uname"><span class="message">请输入用户名</span>
+    <script>
+        // 量词是设定某个模式出现的次数
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/; // 这个模式用户只能输入英文字母 数字 下划线 短横线 但是有边界符和[] 这就限定了只能多选1
+        // {6,16} 中间不要加空格
+        // console.log(reg.test('a'));
+        // console.log(reg.test('aa'));
+        // console.log(reg.test('8'));
+        // console.log(reg.test('18'));
+        // console.log('------------');
+        // console.log(reg.test('andy-red'));
+        // console.log(reg.test('andy_red'));
+        // console.log(reg.test('andy001'));
+        // console.log(reg.test('andy001!')); // false
+        var uname = document.querySelector('.uname');
+        var message = document.querySelector('span');
+        uname.onblur = function () {
+            if (reg.test(this.value)) {
+                message.innerHTML = '用户名验证成功';
+                message.className = 'right';
+            } else {
+                message.innerHTML = '用户名验证失败';
+                message.className = 'wrong';
+            }
+        }
+    </script>
+</body>
+
+</html>

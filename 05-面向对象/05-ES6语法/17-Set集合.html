@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Set 类似于 无重复元素的数组，成员值具有唯一性
+        let s1 = new Set();
+        console.log(s1.size); // 返回元素的数量
+        let s2 = new Set([1, 2, 3]); // 可以接受一个数组作为参数
+        console.log(s2.size);
+
+
+        // 1. Set 可以用于数组去重
+        const s3 = new Set(['a', 'a', 'b', 'b']);
+        console.log(s3.size); // 2
+        console.log(s3);
+        const arr = [...s3];
+        console.log(arr);
+
+        // 2. Set实例方法
+        const s4 = new Set();
+        // (1) add方法 向set实例添加元素
+        s4.add('a').add('b');
+        console.log(s4);
+
+        // (2) delete方法 向set实例删除元素 返回布尔值
+        const b1 = s4.delete('c');
+        console.log(b1);
+
+        // (3) has方法 判断set实例是否包含某个值 返回布尔值
+        const b2 = s4.has('a');
+        console.log(b2);
+
+        // (4) clear方法 清空set实例中的元素
+        s4.clear();
+        console.log(s4);
+
+        // 3. 遍历 Set
+        var s5 = new Set(['a', 'b', 'c']);
+        s5.forEach((value, value2, set) => {
+            console.log(value);
+            console.log(value2);
+            console.log(set);
+        })
+    </script>
+</body>
+
+</html>

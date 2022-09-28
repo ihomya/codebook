@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组解构允许我们按照一一对应的关系从数组中提取值并将值赋予变量
+        let arr = [1, 2, 3];
+        let [a, b, c] = arr;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        // 如果解构不成功，变量的值为undefined
+        let [d, e, f] = [1];
+        // let [d, e, f] = [1, 2, 3, 4];
+        console.log(d);
+        console.log(e);
+        console.log(f);
+    </script>
+</body>
+
+</html>

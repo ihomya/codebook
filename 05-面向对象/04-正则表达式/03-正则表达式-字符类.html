@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var rg = /abc/; 只要包含abc就可以
+        // 字符类：[] 表示有一系列字符可供选择，只要匹配其中一个即可
+        var rg = /[abc]/; // 只要包含 a 或者 b 或者 c 都返回 true
+        console.log(rg.test('andy')); // true
+        console.log(rg.test('baby')); // true
+        console.log(rg.test('color')); // true
+        console.log(rg.test('red')); // false
+        console.log('---------------------');
+
+        var reg = /^[abc]$/; // 三选一 只要是 a 或者 b 或者 c 这三个字母才返回true
+        console.log(reg.test('aa'));
+        console.log(reg.test('a'));
+        console.log(reg.test('b'));
+        console.log(reg.test('c'));
+        console.log(reg.test('abc'));
+        console.log('---------------------');
+
+        var reg1 = /^[a-z]$/; // 26个字母任何一个即返回true; - 表示 a 到 z 的范围
+        console.log(reg1.test('a'));
+        console.log(reg1.test('z'));
+        console.log(reg1.test(1));
+        console.log(reg1.test('A'));
+        console.log('---------------------');
+
+        // 字符组合
+        var reg2 = /^[a-zA-Z0-9_-]$/; // 26个字母（包含大小写）任何一个即返回true
+        console.log(reg2.test('a'));
+        console.log(reg2.test('B'));
+        console.log(reg2.test('_'));
+        console.log(reg2.test('-'));
+        console.log(reg2.test('!')); // false
+        console.log('---------------------');
+
+        // 如果[]中有 ^ 表示取反的意思; 注意区分边界符 ^
+        var reg2 = /^[^a-zA-Z0-9_-]$/;
+        console.log(reg2.test('a'));
+        console.log(reg2.test('B'));
+        console.log(reg2.test('_'));
+        console.log(reg2.test('-'));
+        console.log(reg2.test('!')); // true
+        console.log('---------------------');
+    </script>
+</body>
+
+</html>
