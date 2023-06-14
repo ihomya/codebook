@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #000;
+            background-color: pink;
+            transition: all 2s;
+            /* 添加给标签本身，不要加到hover */
+            transform-origin: right bottom;
+            transform-origin: left bottom;
+        }
+
+        div:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>转换原点
+        <p> transform-origin 属性允许您改变被转换元素的位置</p>
+        <p>2D 转换元素能够改变元素 x 和 y 轴,3D 转换元素还能改变其 Z 轴</p>
+
+    </h2>
+    <p>语法：transform-origin: x-axis y-axis z-axis;</p>
+    <ul>
+        <li>x-axis: left|center|right|length|百分数|默认50%</li>
+        <li>y-axis: top|center|bottom|length|百分数|默认50%</li>
+        <li>z-axis: length|默认0</li>
+    </ul>
+    <div></div>
+</body>
+
+</html>

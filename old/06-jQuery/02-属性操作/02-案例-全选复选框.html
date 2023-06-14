@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <input type="checkbox" class="checkall">
+    <input type="checkbox" class="j-checkbox">
+    <input type="checkbox" class="j-checkbox">
+    <input type="checkbox" class="j-checkbox">
+    <input type="checkbox" class="checkall">
+    <script>
+        $(function () {
+            // 1. 点击任意.checkall 则设置所有复选框
+            $('.checkall').change(function () {
+                let checked = $(this).prop('checked')
+                $('.j-checkbox,.checkall').prop('checked', checked)
+            })
+            // 2. 当.j-checkbox:checked个数等于.j-checkbox个数,则选中全选按钮，反之则取消
+            $('.j-checkbox').change(function () {
+                if ($('.j-checkbox:checked').length === $('.j-checkbox').length) {
+                    $('.checkall').prop('checked', true)
+                } else {
+                    $('.checkall').prop('checked', false)
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

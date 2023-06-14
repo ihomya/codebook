@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // charAt(index)
+        // 解释：返回字符串指定位置的字符。这里的 str.charAt(index)和str[index]的效果是一样的
+        // 区别在于：str[index]是 H5 标准里新增的特性
+        // 字符 = str.charAt(index);
+        // 如果参数 index 不在 [0, string.length) 之间，该方法将返回一个空字符串
+        var str = new String('smyhvae');
+
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+    </script>
+</body>
+
+</html>

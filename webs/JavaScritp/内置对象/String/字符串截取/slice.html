@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // slice()
+        // 解释：从字符串中截取指定的内容。不会修改原字符串，而是将截取到的内容返回
+        // 新字符串 = str.slice(开始索引, 结束索引); //两个参数都是索引值。包左不包右。[startIndex,endIndex)
+        var str = '01234567'
+        var newStr = str.slice(1, 5);
+        alert(`截取的字符串${newStr}`) // 1234
+        alert(`原字符串不变${str}`) // 01234567
+        /*
+            (2, 5) 截取时，包左不包右。
+
+            (2) 表示从指定的索引位置开始，截取到最后。
+
+            (-3) 表示从倒数第三个开始，截取到最后。
+
+            (1, -1) 表示从第一个截取到倒数第一个。
+
+            (5, 2) 表示前面的大，后面的小，返回值为空。
+
+#2、substring()
+        */
+    </script>
+</body>
+
+</html>

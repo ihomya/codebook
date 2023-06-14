@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // repeat()：重复字符串
+        // 解释：将字符串重复指定的次数。会返回新的值，不会修改原字符串。
+        // 语法：newStr = str.repeat(重复的次数);
+
+        // 案例1
+        const name = 'qianguyihao';
+        console.log(name.repeat(2)); // 打印内容：qianguyihaoqianguyihao
+
+        // 案例2（模糊字符串的后四位）
+        const telephone = '13088889999';
+        const mix_telephone = telephone.slice(0, -4) + '*'.repeat(4); // 模糊电话号码的后四位
+
+        console.log(telephone); // 打印结果：13088889999
+        console.log(mix_telephone); // 打印结果：1308888****
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立体呈现</title>
+    <style>
+        .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            transition: all 2s;
+            /* 所有子元素在3d空间中显示 */
+            /* transform-style: flat|preserve-3d; */
+            transform-style: preserve-3d;
+
+        }
+
+        .cube div {
+
+            width: 200px;
+            height: 200px;
+        }
+
+        .front {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: orange;
+            transform: translateZ(200px);
+        }
+
+        .back {
+            background-color: green;
+        }
+
+        .cube:hover {
+            transform: rotateY(180deg);
+            /* transform: rotateX(180deg); */
+            /* transform: rotateZ(180deg); */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            transition: all 0.5s;
+        }
+
+        .box:hover {
+            /* 为父级添加perspective属性，实现Z轴位移 */
+            transform: translateZ(200px);
+            transform: translateZ(-200px);
+        }
+    </style>
+</head>
+
+<body>
+    <p>3d转换中z轴指向屏幕外</p>
+    <h3>transform-style: flat|preserve-3d;</h3>
+    <span>使元素在3d空间中呈现;默认平面显示</span>
+    <div class="cube">
+        <div class="front">前面</div>
+        <div class="back">后面</div>
+    </div>
+
+    <!-- <p>3d平移 translate3d(x,y,z)</p> -->
+    <h3>perspective 属性
+    </h3>
+    <p>定义 3D 元素距视图的距离，以像素计。此属性允许您更改查看 3D 元素的视角。</p>
+    <span> 当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。 只影响 3D 转换元素</span>
+    <!-- 视距：人眼到屏幕的距离（800-1200） -->
+    <div style="perspective: 1000px;">
+        <div class="box"></div>
+    </div>
+    <h3>perspective-origin 属性</h3>
+    <p>定义 3D 元素所基于的 X 轴和 Y 轴</p>
+    <span>规定 3D 元素的底部位置</span>
+    <span>perspective-origin: x-axis y-axis;</span>
+    <div style="perspective: 1000px;perspective-origin: left top;">
+        <div class="box"></div>
+    </div>
+
+    <h3>backface-visibility 属性</h3>
+    <p>定义当元素不面向屏幕时是否可见</p>
+    <SPan>backface-visibility: 默认visible|hidden;</SPan>
+    <div class="box" style="transform: rotateY(180deg); backface-visibility: hidden;">1</div>
+    <div class="box" style="transform: rotateY(180deg)">2</div>
+
+    <!-- matrix3d() -->
+</body>
+
+</html>

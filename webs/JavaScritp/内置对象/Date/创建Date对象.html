@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 内置对象 Date 用来处理日期和时间
+        // Date 对象是一个构造函数 ，需要先实例化后才能使用
+
+        // 1. 写法一：如果Date()不写参数，就返回当前时间对象
+        var date1 = new Date();
+        console.log(date1); // 返回 当前代码执行的时间
+        console.log(typeof date1);
+
+        // 2. 写法二：如果Date()里面写参数，就返回括号里输入的时间对象
+        // 参数：既可以传递字符串，也可以传递数字，也可以传递时间戳
+        // （1）传递字符串
+        const date11 = new Date('2020/02/17 21:00:00');
+        console.log(date11); // Mon Feb 17 2020 21:00:00 GMT+0800 (中国标准时间)
+
+        const date12 = new Date('2020/04/19'); // 返回的就是四月
+        console.log(date12); // Sun Apr 19 2020 00:00:00 GMT+0800 (中国标准时间)
+
+        const date13 = new Date('2020-05-20');
+        console.log(date13); // Wed May 20 2020 08:00:00 GMT+0800 (中国标准时间)
+
+        const date14 = new Date('Wed Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)');
+        console.log(date14); // Fri Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)
+
+        // （2）传递数字
+        const date21 = new Date(2020, 2, 18); // 注意，第二个参数返回的是三月，不是二月
+        console.log(date21); // Wed Mar 18 2020 00:00:00 GMT+0800 (中国标准时间)
+
+        const date22 = new Date(2020, 3, 18, 22, 59, 58);
+        console.log(date22); // Sat Apr 18 2020 22:59:58 GMT+0800 (中国标准时间)
+
+        const params = [2020, 06, 12, 16, 20, 59];
+        const date23 = new Date(...params);
+        console.log(date23); // Sun Jul 12 2020 16:20:59 GMT+0800 (中国标准时间)
+
+        // （3）传递时间戳  
+        const date31 = new Date(1591950413388);
+        console.log(date31); // Fri Jun 12 2020 16:26:53 GMT+0800 (中国标准时间)
+
+        // 先把时间对象转换成时间戳，然后把时间戳转换成时间对象
+        const timestamp = new Date().getTime();
+        const date32 = new Date(timestamp);
+        console.log(date32);  
+    </script>
+</body>
+
+</html>

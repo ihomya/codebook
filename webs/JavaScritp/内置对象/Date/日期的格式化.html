@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果我们需要获取日期的指定部分，就需要用到 Date对象自带的方法
+        /* 
+        方法名	            含义	            备注
+        getFullYear()	    获取年份	
+        getMonth()	        获取月： 0-11	    0代表一月
+        getDate()	        获取日：1-31	    获取的是几号
+        getDay()	        获取星期：0-6	    0代表周日，1代表周一
+        getHours()	        获取小时：0-23	
+        getMinutes()	    获取分钟：0-59	
+        getSeconds()	    获取秒：0-59	
+        getMilliseconds()	获取毫秒	        1s = 1000ms
+        */
+        var myDate = new Date('Mon Feb 04 2019 13:23:52 GMT+0800 (中国标准时间)');
+
+        console.log(myDate); // 打印结果：Mon Feb 04 2019 13:23:52 GMT+0800 (中国标准时间)
+
+        console.log(myDate.getFullYear()); // 打印结果：2019
+        console.log(myDate.getMonth() + 1); // 打印结果：2
+        console.log(myDate.getDate()); // 打印结果：4
+
+        var dayArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        console.log(myDate.getDay()); // 打印结果：1
+        console.log(dayArr[myDate.getDay()]); // 打印结果：星期一
+
+        console.log(myDate.getHours()); // 打印结果：13
+        console.log(myDate.getMinutes()); // 打印结果：23
+        console.log(myDate.getSeconds()); // 打印结果：52
+        console.log(myDate.getMilliseconds()); // 打印结果：393
+
+        console.log(myDate.getTime()); // 获取时间戳。打印结果：1549257832393
+
+        // 举例：年月日的格式化
+        console.log(formatDate());
+
+        /*
+            方法：日期格式化。
+            格式要求：今年是：2020年02月02日 08:57:09 星期日
+        */
+        function formatDate() {
+            var date = new Date();
+
+            var year = date.getFullYear(); // 年
+            var month = date.getMonth() + 1; // 月
+            var day = date.getDate(); // 日
+
+            var week = date.getDay(); // 星期几
+            var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+            var hour = date.getHours(); // 时
+            hour = hour < 10 ? '0' + hour : hour; // 如果只有一位，则前面补零
+
+            var minute = date.getMinutes(); // 分
+            minute = minute < 10 ? '0' + minute : minute; // 如果只有一位，则前面补零
+
+            var second = date.getSeconds(); // 秒
+            second = second < 10 ? '0' + second : second; // 如果只有一位，则前面补零
+
+            var result = '今天是：' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' ' + weekArr[week];
+
+            return result;
+        }
+    </script>
+</body>
+
+</html>

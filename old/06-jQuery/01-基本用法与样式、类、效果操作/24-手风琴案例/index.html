@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .king {
+            margin: 100px auto;
+            width: 852px;
+            background: url(./images/bg.png) no-repeat;
+            padding: 10px;
+        }
+
+        .king ul {
+            overflow: hidden;
+        }
+
+        .king li {
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 69px;
+            margin-right: 10px;
+        }
+
+        .king li .big {
+            display: none;
+            width: 224px;
+        }
+
+        .king li .small {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 69px;
+        }
+
+        .king li.current {
+            width: 224px;
+        }
+
+        .king li.current .big {
+            display: block;
+        }
+
+        .king li.current .small {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="king">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="./images/c.png" alt="" class="big">
+                    <img src="./images/c1.jpg" alt="" class="small">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/c.png" alt="" class="big">
+                    <img src="./images/c1.jpg" alt="" class="small">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/c.png" alt="" class="big">
+                    <img src="./images/c1.jpg" alt="" class="small">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/c.png" alt="" class="big">
+                    <img src="./images/c1.jpg" alt="" class="small">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $('.king li').mouseenter(function () {
+            // // 鼠标经过某个小li 有两步操作：
+            $(this).stop().animate({
+                // 1.当前小li 宽度变为 224px， 同时里面的小图片淡出，大图片淡入
+                width: 224
+            }).find('.small').stop().fadeOut().siblings('.big').stop().fadeIn()
+            $(this).siblings('li').stop().animate({
+                // 2.其余兄弟小li宽度变为69px， 小图片淡入， 大图片淡出
+                width: 69
+            }).find('.small').stop().fadeIn().siblings('.big').stop().fadeOut()
+
+        })
+    </script>
+</body>
+
+</html>

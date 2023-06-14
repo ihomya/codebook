@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            search()
+            解释：可以检索一个字符串中是否含有指定内容。如果字符串中含有该内容，则会返回其第一次出现的索引；如果没有找到指定的内容，则返回 -1。
+            
+            索引值 = str.search(想要查找的字符串);
+            索引值 = str.search(正则表达式);
+        */
+        const name = 'qianguyihao';
+
+        console.log(name.search('yi')); // 打印结果：6
+        console.log(name.search(/yi/i)); // 采用的是正则表达式的写法，意思是，让 name去匹配字符yi，忽略大小写;打印结果：6
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // substr()
+        // 解释：从字符串中截取指定的内容。不会修改原字符串，而是将截取到的内容返回
+        // 语法：新字符串 = str.substr(开始索引, 截取的长度);
+        /* 
+            (2,4) 从索引值为 2 的字符开始，截取 4 个字符。
+            (1) 从指定位置开始，截取到最后。
+            (-3) 从倒数第几个开始，截取到最后。
+        */
+        // 备注：ECMAscript 没有对 substr() 方法进行标准化，因此不建议使用它
+        var str = '0123456789';
+        console.log(str.substr(1, 5)); // 从1开始截取5个字符 12345
+        console.log(str.substr(1));  // 从1开始截取到末尾 123456789
+        console.log(str.substr(-3)); // 从倒数第三个开始截取到末尾 789
+
+    </script>
+</body>
+
+</html>

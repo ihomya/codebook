@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h2>1. 插入节点</h2>
+    <h3>parent.appendChild(newElement) 追加节点到尾部</h3>
+    <div id="div1">
+        <p id="p1">这是一个段落。</p>
+        <p id="p2">这是另外一个段落。</p>
+    </div>
+
+    <!-- 创建节点 -->
+    <script>
+        // 1. 创建 <p> 元素:
+        var para = document.createElement("p");
+        // 2. 为 <p> 元素创建一个新的文本节点
+        var node = document.createTextNode("这是一个新的段落。");
+        // 3. 将文本节点添加到 <p> 元素中
+        para.appendChild(node);
+        // 4. 在一个已存在的元素中添加 p 元素
+        var div1 = document.getElementById("div1");
+        // 4.1 追加新节点到尾部
+        div1.appendChild(para);
+    </script>
+
+    <h3> parent.insertBefore(newElement,child) 插入节点到指定子节点前面</h3>
+    <div id="div2">
+        <p id="p21">这是一个段落。</p>
+        <p id="p22">这是另外一个段落。</p>
+    </div>
+    <script>
+        var element2 = document.getElementById("div2");
+        var child = document.getElementById("p22");
+        // 4.2 插入新节点到指定子节点前面
+        element2.insertBefore(para, child);
+    </script>
+
+    <h2>2. 移除已存在的元素</h2>
+    <h3>parent.removeChild(child)</h3>
+    <div id="div3">
+        <p id="p31">这是一个段落。</p>
+        <p id="p32">这是另外一个段落。</p>
+    </div>
+    <!-- 2. 移除已存在的元素 -->
+    <script>
+        // 1. 获取父元素
+        var parent = document.getElementById("div3");
+        // 2. 获取子元素
+        var child1 = document.getElementById("p31");
+        // 3. 移除子元素
+        // 删除节点必须知道父节点
+        parent.removeChild(child1);
+    </script>
+
+    <h2>3. 替换 HTML 元素</h2>
+    <h3>parent.replaceChild(newElement, child)</h3>
+    <div id="div4">
+        <p id="p41">这是一个段落。</p>
+        <p id="p42">这是另外一个段落。</p>
+    </div>
+    <script>
+        var parent = document.getElementById("div4");
+        var child = document.getElementById("p41");
+        parent.replaceChild(para, child);
+    </script>
+</body>
+
+</html>

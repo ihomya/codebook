@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        .flex-container {
+            display: flex;
+            width: 400px;
+            height: 250px;
+            background-color: lightgrey;
+        }
+
+        .flex-item {
+            width: 100px;
+            background-color: cornflowerblue;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>flex 伸缩比</h1>
+    <div class="flex-container">
+        <div class="flex-item" style="flex:2">flex item 1</div>
+        <div class="flex-item" style="flex:1">flex item 2</div>
+        <div class="flex-item" style="flex:1">flex item 3</div>
+    </div>
+    <h1>flex-grow 扩展比率</h1>
+    <p>使第三个弹性项目的增长速度比其他弹性项目快八倍：</p>
+    <div class="flex-container">
+        <div class="flex-item" style="flex-grow: 1">1</div>
+        <div class="flex-item" style="flex-grow: 1">2</div>
+        <div class="flex-item" style="flex-grow: 8">3</div>
+    </div>
+    <h1>flex-basis 默认基准值/初始长度</h1>
+    <p>使第三个弹性项目的增长速度比其他弹性项目快八倍：</p>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item" style="flex-basis:200px">3</div>
+    </div>
+    <!-- <h1>flex-shrink 收缩比率</h1>
+    <p>不要让第三个弹性项目收缩得与其他弹性项目一样多</p>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item" style="flex-shrink: 1;">3</div>
+    </div> -->
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // replace()
+        // 解释：将字符串中的指定内容，替换为新的内容并返回。不会修改原字符串。默认只会替换第一个被匹配到的字符。如果要全局替换，需要使用正则。
+        // 语法：新的字符串 = str.replace(被替换的子串，新的子串);
+        //replace()方法：替换
+        var str2 = 'Today is fine day,today is fine day !';
+        console.log(str2);
+
+        console.log(str2.replace('today', 'tomorrow')); //只能替换第一个today
+        console.log(str2.replace(/today/gi, 'tomorrow')); //这里用到了正则，才能替换所有的today
+    </script>
+</body>
+
+</html>

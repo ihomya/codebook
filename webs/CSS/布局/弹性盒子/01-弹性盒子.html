@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      /*一行排列 子级不脱离标准流*/
+      display: flex;
+      /* 主轴：子级排列方向 
+      def：row 默认从左到右 */
+      /* 侧轴：与主轴始终垂直 */
+      /* flex-direction: row;*/
+      flex-direction: column;
+      /* 从上往下排列 */
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .bother {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son">1</div>
+    <div class="son">2</div>
+    <div class="son">3</div>
+  </div>
+  <div class="bother">bother</div>
+</body>
+
+</html>

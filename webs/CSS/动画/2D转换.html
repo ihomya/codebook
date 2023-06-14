@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            width: 300px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid #000;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border: 1px solid #000;
+        }
+
+        .translate {
+            transform: translate(50px, 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <p>原状态</p>
+    <h3>
+        <div></div>
+    </h3>
+    <h2>平移 translate()方法
+        <p>根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动</p>
+    </h2>
+    <p>translate(50px,100px)是从左边元素移动50个像素，并从顶部移动100像素</p>
+    <h3>
+        <div style="transform: translate(50px, 100px);"></div>
+    </h3>
+
+    <h2>旋转 rotate()方法
+        <p>
+            在一个给定度数顺时针旋转的元素。
+            负值是允许的，这样是元素逆时针旋转
+        </p>
+    </h2>
+    <p>rotate(30deg) 元素顺时针旋转30度</p>
+    <h3>
+        <div style="transform: rotate(30deg);"></div>
+    </h3>
+
+    <h2>缩放 scale()方法
+        <p>该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数</p>
+    </h2>
+    <p>scale(2,3) 转变宽度为原来的大小的0.5倍，和其原始大小2倍的高度</p>
+    <h3>
+        <div style="transform: scale(0.5,2);"></div>
+    </h3>
+    <p>scaleX(0.5) scaleY(2) 单独设置宽高</p>
+    <h3>
+        <div style="transform: scaleX(0.5) scaleY(2);"></div>
+    </h3>
+
+    <h2>倾斜 skew()方法
+        <p>使元素沿 X 和 Y 轴倾斜给定角度</p>
+    </h2>
+    <p>skew(30deg,20deg) 元素在 X 轴和 Y 轴上倾斜 20 度 30 度</p>
+    <h3>
+        <div style="transform: skew(30deg,20deg);"></div>
+    </h3>
+    <p>skewX(30deg) skewY(20deg) 单独设置xy</p>
+    <h3>
+        <div style="transform: skewX(30deg) skewY(20deg);"></div>
+    </h3>
+
+    <h2>组合写法 matrix()
+        <p>matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</p>
+    </h2>
+    <h3>
+        <div style="transform: matrix(1, -0.3, 0, 1, 0, 0);"></div>
+    </h3>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // charCodeAt(index)
+        // 解释：返回字符串指定位置的字符的 Unicode 编码
+        /* 在实际应用中，通过这个方法，我们可以判断用户按下了哪个按键 */
+        // 字符 = str.charCodeAt(index);
+        // 案例：打印字符串的占位长度
+        /*
+            提示：一个英文占一个位置，一个中文占两个位置。
+
+            思路：判断该字符是否在 0-127 之间（在的话是英文，不在是非英文
+        */
+        var str = 'I love my country!我你爱中国！';
+        alert(getZFWlength(str));
+        alert(str.length);
+        // 定义方法：字符位
+        function getZFWlength(string) {
+            // 定义一个计数器
+            var count = 0;
+            for (var i = 0; i < string.length; i++) {
+                //对每一位字符串进行判断，如果Unicode编码在0-127，计数器+1；否则+2
+                if (string.charCodeAt(i) < 128 && string.charCodeAt(i) >= 0) {
+                    count++;
+                } else {
+                    count += 2;
+                }
+            }
+            return count;
+        }
+    </script>
+</body>
+
+</html>

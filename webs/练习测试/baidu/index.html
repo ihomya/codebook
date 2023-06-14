@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <title>百度一下，你就知道</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header wrapper">
+        <div class="nav">
+            <ul>
+                <li><a href="http://news.baidu.com/">新闻</a></li>
+                <li><a href="https://www.hao123.com/?src=from_pc_logon">hao123</a></li>
+                <li><a href="http://map.baidu.com/">地图</a></li>
+                <li><a href="http://tieba.baidu.com/">贴吧</a></li>
+                <li><a href="https://haokan.baidu.com/?sfrom=baidu-top">视频</a></li>
+                <li><a href="http://image.baidu.com/">图片</a></li>
+                <li><a href="https://pan.baidu.com/?from=1026962h">网盘</a></li>
+                <li><a href="#">更多</a></li>
+            </ul>
+        </div>
+        <div class="setting">
+            <span>设置</span>
+            <ul>
+                <li><a href="#">搜索设置</a></li>
+                <li><a href="#">高级搜索</a></li>
+                <li><a href="#">关闭预测</a></li>
+                <li><a href="#">搜索设置</a></li>
+            </ul>
+
+        </div>
+
+        <div class="user"></div>
+    </div>
+    <div class="bd">
+        <h1><img src="./images/logo.png" alt=""></h1>
+        <form class="search wrapper">
+            <input type="search" name="" id="">
+            <button type="submit">百度一下</button>
+            <a href="javascript:;" class="camera"></a>
+            <div class="camera-tip">按图片搜索</div>
+        </form>
+        <div class="camera-box wrapper">
+            <div class="upload-area">拖拽图片到这里</div>
+            <button class="choose">选择文件</button>
+            <a href="javascript:;" class="close"><img
+                    src="https://yxs-web.oss-cn-beijing.aliyuncs.com/328e4d97f9d0d68ea04e872f68e508e3.png" alt=""></a>
+        </div>
+    </div>
+    <div class="footer ">
+        <span class="layer warpper">
+            <a href="https://home.baidu.com/">关于百度</a>
+            <a href="http://ir.baidu.com/">About Baidu</a>
+            <a href="https://www.baidu.com/duty">使用百度前必读</a>
+            <a href="https://help.baidu.com/">帮助中心</a>
+            <a href="https://e.baidu.com/?refer=1271">企业推广</a>
+            <a
+                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a>
+            <a href="https://beian.miit.gov.cn/">京ICP证030173号</a>
+            <a href="https://www.baidu.com/licence/">信息网络传播视听节目许可证 0110516</a>
+            <a href="#">药品医疗器械网络信息服务备案（京）网药械信息备字（2021）第00159号</a>
+
+        </span>
+    </div>
+    <script>
+        var flag = false;
+        var search = document.querySelector('.search');
+        var camera = search.querySelector('.camera');
+        var tip = search.querySelector('.camera-tip');
+        var camerabox = document.querySelector('.camera-box')
+        camera.addEventListener('mouseover', function () {
+            tip.style.display = 'block';
+        })
+        camera.addEventListener('mouseout', function () {
+            tip.style.display = 'none';
+        })
+        camera.addEventListener('click', function () {
+            camerabox.style.display = 'block';
+            camera.style.display = 'none';
+            flag = true;
+        })
+        camerabox.querySelector('.close').addEventListener('click', function () {
+            camerabox.style.display = 'none';
+            camera.style.display = 'block';
+            flag = false;
+        })
+        document.addEventListener('click', function () {
+            if (flag) {
+                camerabox.querySelector('.close').click();
+            }
+        }, true);
+
+    </script>
+</body>
+
+</html>

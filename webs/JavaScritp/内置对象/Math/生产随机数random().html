@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math.random()
+        // 返回：[0, 1) 之间的随机浮点数
+        /*
+            生成 [0, x) 之间的随机数
+            Math.round(Math.random()*x)
+        */
+        console.log(Math.round(Math.random() * 9)); // 生成 [0, 9) 之间的随机数
+        /*
+            生成 [x, y) 之间的随机数
+            Math.round(Math.random()*(y-x)+x)
+        */
+        console.log(Math.round(Math.random() * (10 - 1) + 1));
+        /* 
+            【重要】生成 [x, y]之间的随机整数
+            也就是说：生成两个整数之间的随机整数，并且要包含这两个整数。
+        */
+        function getRandom(min, max) {
+            // Math.floor(x)表示返回小于或等于x的“最近的那个整数”
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log(getRandom(1, 10));
+
+        // 案例：随机点名
+        /*
+        * 生成两个整数之间的随机整数，并且要包含这两个整数
+        */
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const arr = ['许嵩', '邓紫棋', '毛不易', '解忧邵帅'];
+        const index = getRandom(0, arr.length - 1); // 生成随机的index
+        console.log(arr[index]); // 随机点名
+    </script>
+</body>
+
+</html>

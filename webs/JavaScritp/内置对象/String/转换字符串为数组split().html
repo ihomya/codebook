@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // split()
+        // 解释：通过指定的分隔符，将一个字符串拆分成一个数组。不会改变原字符串
+        // 语法：新的数组 = str.split(分隔符);
+        /* 
+            备注：split()这个方法在实际开发中用得非常多。
+            一般来说，从接口拿到的 json 数据中，经常会收到类似于"q, i, a, n"这样的字符串，前端需要将这个字符串拆分成['q', 'i', 'a', 'n']数组，这个时候split()方法就派上用场了
+        */
+        // 案例1
+        var str = 'qian, gu, yi, hao'; // 用逗号隔开的字符串
+        var array = str.split(','); // 将字符串 str 拆分成数组，通过逗号来拆分
+
+        console.log(array); // 打印结果是数组：["qian", " gu", " yi", " hao"]
+
+        // 案例2
+        //split()方法：字符串变数组
+        var str3 = '千古壹号|qianguyihao|许嵩';
+
+        console.log('结果1：' + str3.split()); // 无参数，表示：把整个字符串作为一个元素添加到数组中。
+
+        console.log(str3.split('')); // 参数为空字符串，则表示：分隔字符串中每一个字符，分别添加到数组中
+
+        console.log(str3.split('|')); // 参数为指定字符，表示：用 '|' 分隔字符串。此分隔符将不会出现在数组的任意一个元素中
+
+        console.log(str3.split('许')); // 同上
+    </script>
+</body>
+
+</html>

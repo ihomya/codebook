@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // substring()
+        /*
+            解释：从字符串中截取指定的内容。和slice()类似。
+        */
+        // 语法：新字符串 = str.substring(开始索引, 结束索引); 
+
+        // substring()和slice()区别：
+        // 1. substring()不能接受负值作为参数。如果传递了一个负值，则默认使用 0。
+        // 2. substring()还会自动调整参数的位置，如果第二个参数小于第一个，则自动交换。比如说， substring(1, 0)相当于截取的是第一个字符
+        var str = '0123456789';
+        console.log(`截取[0,3)：${str.substring(0, 3)}`);
+        console.log(`截取[3,-1)：${str.substring(3, -1)}`);
+        console.log('以上二者结果相同，substring自动将负数转换为0，相当于截取[3,0)');
+        console.log('又因为substring会自动调整参数位置，所以截取的是[0,3)')
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. document.write('') 改变HTML输出流
+        document.write("document.write('') 改变HTML输出流") 
+    </script>
+    <p id="p1">旧内容</p>
+    <a href="#" id="a1">点击</a>
+    <div id="box"></div>
+    <script>
+        // 2. 修改HTML内容
+        // document.getElementById(id).innerHTML=新的 HTML
+        document.getElementById('p1').innerHTML = '通过给 innerHTML 属性赋值来改变标签内容';
+
+        // 3. 改变 HTML 属性
+        // document.getElementById(id).attribute=新属性值
+        document.getElementById('a1').href = 'https://www.baidu.com';
+
+        // 4. 改变HTML样式
+        // document.getElementById(id).style.property=新样式
+        var box = document.getElementById('box')
+        box.style.backgroundColor = 'pink';
+        box.style.width = '100px'
+        box.style.height = '100px'
+    </script>
+</body>
+
+</html>

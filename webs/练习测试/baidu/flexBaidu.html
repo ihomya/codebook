@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #4e6ef2;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 20px 24px 0;
+        }
+
+        .header .nav>ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .header .nav>ul>li {
+            margin-right: 24px;
+        }
+
+
+        /* .header .settings {} */
+        .function .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .function .logo img {
+            width: 270px;
+        }
+
+        .function .search {
+            display: flex;
+            justify-content: center;
+        }
+
+        .function .search .searchBox {
+            /* width: 655px; */
+            /* height: 45px; */
+            display: flex;
+            /* background-color: pink; */
+        }
+
+        .function .search .searchBox .searchIpt {
+            width: 545px;
+            height: 45px;
+            border-radius: 10px 0 0 10px;
+            border: 2px solid #ccc;
+            border-right: 0;
+            padding-left: 10px;
+            padding-right: 50px;
+        }
+
+        .function .search .searchBox .searchIpt:focus {
+            outline: none;
+            border: 2px solid #4e6ef2;
+            border-right: 0;
+        }
+
+        .function .search .searchBox .searchBtn {
+            width: 110px;
+            height: 45px;
+            border-radius: 0 10px 10px 0;
+            border: 0;
+            background-color: #4e6ef2;
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="http://news.baidu.com/">新闻</a></li>
+                <li><a href="https://www.hao123.com/?src=from_pc_logon">hao123</a></li>
+                <li><a href="http://map.baidu.com/">地图</a></li>
+                <li><a href="http://tieba.baidu.com/">贴吧</a></li>
+                <li><a href="https://haokan.baidu.com/?sfrom=baidu-top">视频</a></li>
+                <li><a href="http://image.baidu.com/">图片</a></li>
+                <li><a href="https://pan.baidu.com/?from=1026962h">网盘</a></li>
+                <li><a href="javascript:;">更多</a></li>
+            </ul>
+        </div>
+        <div class="settings">
+            <a href="javascript:;">设置</a>
+            <!-- <ul>
+                <li><a href="#">搜索设置</a></li>
+                <li><a href="#">高级搜索</a></li>
+                <li><a href="#">关闭预测</a></li>
+                <li><a href="#">搜索设置</a></li>
+            </ul> -->
+        </div>
+    </div>
+    <!-- 功能 -->
+    <div class="function">
+        <!-- logo -->
+        <h1 class="logo">
+            <a href="./images/logo.png"><img src="./images/logo.png" alt=""></a>
+        </h1>
+        <!-- 搜索框 -->
+        <div class="search">
+            <form action="" class="searchBox">
+                <!-- 输入框 -->
+                <input type="text" class="searchIpt">
+                <!-- 搜索按钮 -->
+                <button type="submit" class="searchBtn">百度一下</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

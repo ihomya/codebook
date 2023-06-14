@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #221b3b;
+            /* height: 58px; */
+        }
+
+        .cl {
+            clear: both;
+        }
+
+        .inner_c {
+            /* background-color: pink; */
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header .logo {
+            float: left;
+            width: 185px;
+            height: 58px;
+        }
+
+        .header .nav {
+            float: left;
+            margin-left: 41px;
+        }
+
+        .header .nav li {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 58px;
+            /* background-color: skyblue; */
+            /* 文字垂直居中 */
+            line-height: 58px;
+            /* 文字水平居中 */
+            text-align: center;
+            /* li默认样式取消 */
+            list-style: none;
+            color: #ccc;
+            font-size: 14px;
+            border-right: 1px solid #a7a7a728;
+        }
+
+        .header .nav li:nth-child(1) {
+            /* border-left: 1px solid #a7a7a728; */
+            border-right: 1px solid transparent;
+        }
+
+        .header .nav li:hover {
+            color: #fff;
+            border-right: 1px solid transparent;
+
+        }
+
+        /* 添加遮罩层 */
+        .header .nav li:hover::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100px;
+            height: 58px;
+            background-color: #ffffff21;
+            /* opacity: 0.5; */
+        }
+
+        .header .nav li:nth-child(1)::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100px;
+            height: 58px;
+            background-color: #ffffff21;
+            /* opacity: 0.5; */
+        }
+
+        .header .join-us img {
+            float: right;
+            height: 34px;
+            margin: 12px 0;
+        }
+
+        .banner {
+            height: 465px;
+            background-image: url(./images/banner.jpg);
+            background-position: -300px 0;
+            margin-top: 12px;
+            margin-bottom: 50px;
+        }
+
+        .product li {
+            float: left;
+            list-style: none;
+            margin-right: 38px;
+            text-align: center;
+        }
+
+        .product li:last-child {
+            margin-right: 0;
+        }
+
+        .product li p img {
+            width: 218px;
+        }
+
+        .product li h5 {
+            height: 38px;
+            line-height: 38px;
+        }
+
+        .product li a {
+            position: relative;
+            text-decoration: none;
+            color: rgb(42, 243, 23);
+            font-size: 12px;
+        }
+
+        .product li a::after {
+            position: absolute;
+            right: -15px;
+            bottom: 2px;
+            content: '';
+            width: 0;
+            height: 0;
+            /* 为兼容性 */
+            line-height: 0;
+            font-size: 0;
+            border: 5px solid transparent;
+            border-left-color: rgb(42, 243, 23);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="header">
+        <!-- 版心 -->
+        <div class="inner_c">
+            <div class="logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <!-- 菜单 -->
+            <div class="nav">
+                <ul>
+                    <li>首页</li>
+                    <li>首页</li>
+                    <li>首页</li>
+                    <li>首页</li>
+                    <li>首页</li>
+                    <li>首页</li>
+                </ul>
+            </div>
+            <div class="join-us">
+                <img src="./images/jrwm.png" alt="">
+            </div>
+        </div>
+        <!-- 清除浮动：让盒子自动撑开 -->
+        <!-- 内墙法 -->
+        <div class="cl"></div>
+    </div>
+    <!-- banner -->
+    <div class="banner"> </div>
+    <!-- 产品预览 -->
+    <div class="product">
+        <div class="inner_c">
+            <ul>
+                <li>
+                    <p><img src="./images/pro3.jpg" alt=""></p>
+                    <h5>BPT宣传片</h5>
+                    <a href="#">点击播放</a>
+                </li>
+                <li>
+                    <p><img src="./images/pro3.jpg" alt=""></p>
+                    <h5>BPT宣传片</h5>
+                    <a href="#">点击播放</a>
+                </li>
+                <li>
+                    <p><img src="./images/pro3.jpg" alt=""></p>
+                    <h5>BPT宣传片</h5>
+                    <a href="#">点击播放</a>
+                </li>
+                <li>
+                    <p><img src="./images/pro3.jpg" alt=""></p>
+                    <h5>BPT宣传片</h5>
+                    <a href="#">点击播放</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

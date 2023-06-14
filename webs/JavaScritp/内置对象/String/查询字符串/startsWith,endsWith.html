@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // startsWith()：字符串是否以指定的内容开头
+        // 解释：判断一个字符串是否以指定的子字符串开头。如果是，则返回 true；否则返回 false
+
+        // 布尔值 = str.startsWith(想要查找的内容, [position]);
+        /* position: 相对于从该值索引截取字符串
+            如果不指定，则默认为0。
+            如果指定，则规定了检索的起始位置。检索的范围包括：这个指定位置开始，直到字符串的末尾。即：[position, str.length) 
+        */
+        const name = 'abcdefg';
+
+        console.log(name.startsWith('a')); // 打印结果：true
+        console.log(name.startsWith('b')); // 打印结果：false
+
+        // 因为指定了起始位置为3，所以是在 defg 这个字符串中检索。
+        console.log(name.startsWith('d', 3)); // 打印结果：true
+        console.log(name.startsWith('c', 3)); // 打印结果：false
+
+        // endsWith()：字符串是否以指定的内容结尾
+        // 解释：判断一个字符串是否以指定的子字符串结尾。如果是，则返回 true；否则返回 false
+        // 布尔值 = str.endsWith(想要查找的内容, [position]);
+        /* position：相当于截取该值长度的字符串
+            如果不指定，则默认为 str.length。 
+            如果指定，则规定了检索的结束位置。检索的范围包括：从第一个字符串开始，直到这个指定的位置。即：[0, position) 
+            endsWith() 方法里的position，表示检索的长度。
+        */
+        console.log(name.endsWith('g')); // 打印结果：true
+        console.log(name.endsWith('f')); // 打印结果：false
+
+        // 因为指定了截止位置为3，所以是在 abc 这个长度为3字符串中检索
+        console.log(name.endsWith('c', 3)); // 打印结果：true
+        console.log(name.endsWith('d', 3)); // 打印结果：false
+    </script>
+</body>
+
+</html>

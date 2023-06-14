@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 普通对象是使用字符串作为属性名
+        // 数组是使用数字作为索引来操作元素。索引：从 0 开始的整数就是索引。
+        // 使用场景：数组的存储性能比普通对象要好。在实际开发中我们经常使用数组存储一些数据（尤其是列表数据），使用频率非常高。
+
+        // 方式一：使用字面量创建数组
+        let arr1 = [] // 创建空数组
+        let arr2 = [1, 2, 3] // 创建带初始值的数组
+
+        // 方式二：使用构造函数创建数组 
+        // let arr2 = new Array(); // 参数为空：创建空数组
+        let arr3 = new Array(4); // 一个参数为 size长度
+        let arr4 = new Array(15, 16, 17); // 参数为多个数值：创建一个带数据的数组
+
+        console.log(typeof arr3); // 打印结果：object
+
+        console.log('arr3 = ' + JSON.stringify(arr3));
+        console.log('arr4 = ' + JSON.stringify(arr4));
+
+        // 数组中的元素的类型: 可以存放任意类型的数据，例如字符串、数字、布尔值、对象等
+        const arr = ['qianguyihao', 28, true, { name: 'qianguyihao' }, [11, 12, 13]];
+    </script>
+</body>
+
+</html>

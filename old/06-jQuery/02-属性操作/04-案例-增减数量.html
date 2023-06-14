@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            margin: 100px;
+            width: 68px;
+            border: 1px solid #000;
+        }
+
+        input {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            height: 25px;
+        }
+
+        .reduce,
+        .add {
+            width: 15px;
+        }
+
+        .count {
+            width: 25px;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        <input type="button" value="-" class="reduce">
+        <input type="text" value="0" class="count">
+        <input type="button" value="+" class="add">
+    </div>
+    <script>
+        $(function () {
+            $('.reduce').click(function () {
+                let count = $('.count').val();
+                if (count != 0) {
+                    $('.count').val(count - 1);
+                } else {
+                    return;
+                }
+            })
+            $('.add').click(function () {
+                let count = $('.count').val() - 0;
+                $('.count').val(count + 1);
+            })
+        })
+    </script>
+</body>
+
+</html>

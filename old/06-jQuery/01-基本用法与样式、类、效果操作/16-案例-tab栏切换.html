@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #tab {
+            width: 1000px;
+            margin: 100px auto;
+        }
+
+        #tab .tab-list {
+            height: 40px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+
+        #tab .tab-list li {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+
+        .current {
+            background-color: rgb(245, 27, 27);
+            color: #fff;
+        }
+
+        #tab .tab-con .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul class="tab-list">
+            <li class="current">商品介绍</li>
+            <li>规格包装</li>
+            <li>售后保障</li>
+            <li>商品评价（5000）</li>
+            <li>手机社区</li>
+        </ul>
+        <div class="tab-con">
+            <div class="item" style="display: block;">商品介绍模块</div>
+            <div class="item">规格包装模块</div>
+            <div class="item">售后保障模块</div>
+            <div class="item">商品评价模块</div>
+            <div class="item">手机社区模块</div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.tab-list li').click(function () {
+                $(this).addClass('current').siblings().removeClass('current');
+                var index = $(this).index();
+                $('.tab-con .item').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

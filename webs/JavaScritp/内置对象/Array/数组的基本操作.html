@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 索引 (下标) ：用来访问/修改数组元素的序号，代表的是数组中的元素在数组中的位置（下标从 0 开始算起）
+
+        // 1. 添加元素
+        // 语法： 数组[索引] = 值;
+        const arr = [];
+
+        // 向数组中添加元素
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[5] = 50;
+
+        console.log(JSON.stringify(arr)); // [10,20,30,40,null,50]
+
+        // 2. 获取元素
+        // 语法：数组[索引]
+        // 如果读取不存在的索引 则返回 undefined
+        console.log(arr[0]);
+
+        // 3. 获取数组的长度
+        // 语法：数组的长度 = 数组名.length
+        console.log(arr.length);
+        /*
+        补充： 
+        对于连续的数组，使用 length 可以获取到数组的长度（元素的个数）；
+        对于非连续的数组（即“稀疏数组”，本文稍后会讲），length 的值会大于元素的个数。
+
+        稀疏数组：索引不连续、数组长度大于元素个数的数组，可以简单理解为有 empty（有空隙）的数组。 
+        密集数组：索引连续、数组长度等于元素个数的数组。
+        */
+
+        // 4. 修改数组的长度: 可以通过修改length属性修改数组的长度 
+        const arr1 = [11, 12, 13];
+        const arr2 = [21, 22, 23];
+
+        // (1). 如果修改的 length 小于原长度，则多出的元素会被删除，数组将从后面删除元素。
+        arr1.length = 1;
+        console.log(JSON.stringify(arr1)); // [11]
+
+        // (2). 如果修改的 length 大于原长度，则多出部分会空出来，置为 null。 
+        arr2.length = 5;
+        console.log(JSON.stringify(arr2)); // [21, 22, 23, null, null]
+        /* (3).（特例：伪数组 arguments 的长度可以修改，但是不能修改里面的元素，以后单独讲。）  */
+
+        // 5. 遍历数组
+        const arr3 = [10, 20, 30, 40, 50];
+
+        for (let i = 0; i < arr3.length; i++) {
+            console.log(arr3[i]); // 打印出数组中的每一项
+        }
+    </script>
+</body>
+
+</html>

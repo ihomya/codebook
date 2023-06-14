@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="idname"></div>
+    <div class="classname"></div>
+    <span></span>
+    <script>
+        // 1. getElementById 通过id查找
+        /* 
+        如果找到该元素，则该方法将以对象（在 x 中）的形式返回该元素。
+        如果未找到该元素，则 x 将包含 null。 
+        */
+        var div1 = document.getElementById('idname');
+        div1.innerHTML = 'getElementById 以对象的形式返回该元素';
+
+        // 2. getElementsByTagName 标签名查询 
+        // 返回 获取过来元素对象的集合 以伪数组的形式存储的
+        var arr1 = document.getElementsByTagName('span');
+        arr1[0].innerHTML = 'getElementsByTagName 返回 获取过来元素对象的集合 以伪数组的形式存储的';
+
+        // 3. 通过类名
+        // 返回标签数组
+        var arr2 = document.getElementsByClassName('classname');
+        arr2[0].innerHTML = 'getElementsByClassName 返回标签数组';
+
+    </script>
+</body>
+
+</html>

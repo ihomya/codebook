@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <a href="https://www.baidu.com/" title="baidu">baidu</a>
+    <input type="checkbox" name="" id="">
+    <div index="1" data-index="2"></div>
+    <span>span</span>
+    <script>
+        $(function () {
+            // 1. element.prop('属性名') 获取元素固有属性值
+            console.log($('a').prop('href'));
+            $('a').prop('title', 'hello');
+            $('input').change(function () {
+                console.log($(this).prop("checked"));
+            })
+
+            // 2. element.attr() 读写元素自定义属性
+            console.log($('div').attr('index'));
+            $('div').attr('index', 4)
+            console.log($('div').attr('data-index'));
+
+            // 3. data() 数据缓存：将数据存放到元素的内存里，不修改属性且页面刷新后清除
+            $('span').data("uname", "andy");
+            console.log($('span').data("uname"));
+            // 这个方法获取data-index h5自定义属性 第一个不用写data- 而且返回的是数字型
+            console.log($('div').data("index"));
+        })
+    </script>
+</body>
+
+</html>

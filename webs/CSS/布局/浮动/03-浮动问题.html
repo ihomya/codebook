@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        /* <!-- 
+            问题：子集浮动后父级元素并未被子集撑开 
+            解决方法：清除浮动
+            1. 为浮动元素的父级添加高度，当高度不足时浮动元素将会脱离父级[无法撑起一个容器]（根本原因）
+            2. 为为后一个浮动元素的父级clear:both; 指的是不允许左侧和右侧有浮动对象；但添加后会使该元素magrin属性失效，margin失效的本质原因是：上图中的box1和box2，高度为零
+         --> */
+
+        /*定义父元素样式*/
+        #father {
+            width: 300px;
+            background-color: #0C6A9D;
+            border: 1px solid red;
+        }
+
+        #father1 {
+            width: 300px;
+            background-color: skyblue;
+            border: 1px solid #000;
+        }
+
+        /*定义子元素样式*/
+        #father div,
+        #father1 div {
+            padding: 10px;
+            margin: 15px;
+        }
+
+        .float {
+            float: left;
+        }
+
+        #son1 {
+            background-color: hotpink;
+            /*这里设置son1的浮动方式*/
+        }
+
+        #son2 {
+            background-color: #FCD568;
+            /*这里设置son2的浮动方式*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <div id="son1">box1</div>
+        <div id="son2">box2</div>
+    </div>
+    <div id="father1">
+        <div id="son1">box1</div>
+        <div id="son2">box2</div>
+    </div>
+    <div>123</div>
+    <div id="father">
+        <div id="son1" class="float">box1</div>
+        <div id="son2" class="float">box2</div>
+    </div>
+    <div id="father1">
+        <div id="son1" class="float">box1</div>
+        <div id="son2" class="float">box2</div>
+    </div>
+</body>
+
+</html>

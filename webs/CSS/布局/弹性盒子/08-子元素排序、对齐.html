@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .flex-container,
+        .flex-container2 {
+            display: flex;
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+
+        .flex-container>div,
+        .flex-container2>div {
+            background-color: DodgerBlue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+
+        .flex-container2 div:nth-child(1) {
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>排序</h1>
+    <p>使用 order 属性可以根据需要对 flex 项目进行排序：</p>
+    <div class="flex-container">
+        <div style="order: 3">1</div>
+        <div style="order: 2">2</div>
+        <div style="order: 4">3</div>
+        <div style="order: 1">4</div>
+    </div>
+    <h1>对齐</h1>
+    <p>设置"margin"值为"auto"值，自动获取弹性容器中剩余的空间。</p>
+    <p>所以设置垂直方向margin值为"auto"，可以使弹性子元素在弹性容器的两上轴方向都完全居中。</p>
+    <p>以下实例在第一个弹性子元素上设置了 margin-right: auto; 。 它将剩余的空间放置在元素的右侧：</p>
+    <div class="flex-container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+</body>
+
+</html>

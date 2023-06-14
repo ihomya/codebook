@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 解构赋值是ES6中新增的一种赋值方式
+
+        /* ES5中，如果想把数组中的元素赋值给其他变量，是这样做的 */
+        /* 
+        const arr = [1, 2, [3, 4]];
+        let a = arr[0]; // 1
+        let b = arr[1]; // 2
+        let c = arr[2]; // [3, 4] 
+        */
+        // 1、数组解构赋值
+        /* 
+        注意点： 
+        （1）等号左边的个数和格式，必须和右边的一模一样，才能完全解构。 
+        （2）当然，左边的个数和右边的个数，可以不一样
+        */
+        let [a, b, c] = [1, 2, [3, 4]];
+        console.log(a); // 1
+        console.log(b); // 2
+        console.log(c); // [3, 4]
+
+        // 2、默认值。在赋值之前，我们可以给左边的变量指定默认值
+        [a, b = 3, c = 4] = [1, 2];
+        console.log(a); // 1
+        console.log(b); // 2。默认值被覆盖。
+        console.log(c); // 4。继续保持默认值。
+
+        // 3、我们可以使用ES6中新增的扩展运算符打包剩余的数据。如果使用了扩展运算符, 那么扩展运算符只能写在最后
+        [a, ...b] = [1, 2, 3];
+        console.log(a); // 1
+        console.log(b); // [2, 3]
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  时间戳的定义和作用
+                时间戳：指的是从格林威治标准时间的1970年1月1日，0时0分0秒到当前日期所花费的毫秒数（1秒 = 1000毫秒）。
+
+                作用：计算机底层在保存时间时，使用的都是时间戳。时间戳的存在，就是为了统一时间的单位
+        */
+        var myDate = new Date("1970/01/01 0:0:0");
+
+        console.log(myDate.getTime()); // 获取时间戳 -28800000
+        /*
+        为啥打印结果是-28800000，而不是0呢？这是因为，我们的当前代码，是在中文环境下运行的，与英文时间会**存在8个小时的时差**（中文时间比英文时间早了八个小时）。如果代码是在英文环境下运行，打印结果就是0
+         */
+        // getTime()  获取日期对象的时间戳（单位：毫秒）
+        // 方式一：获取 Date 对象的时间戳（最常用的写法）
+        const timestamp1 = +new Date();
+        console.log(timestamp1);
+
+        // 方式二：获取 Date 对象的时间戳（较常用的写法）
+        const timestamp2 = new Date().getTime();
+        console.log(timestamp2);
+
+        // 方式三：获取 Date 对象的时间戳
+        const timestamp3 = new Date().valueOf();
+        console.log(timestamp3);
+
+        // 方式4：获取 Date 对象的时间戳
+        const timestamp4 = new Date() * 1;
+        console.log(timestamp4);
+
+        // 方式5：获取 Date 对象的时间戳
+        const timestamp5 = Number(new Date());
+        console.log(timestamp5);
+
+        // 方式六：获取当前时间的时间戳（很常用的写法）
+        console.log(Date.now());
+
+
+
+
+
+
+        /* 利用时间戳检测代码的执行时间
+            我们可以在业务代码的前面定义 时间戳1，在业务代码的后面定义 时间戳2。把这两个时间戳相减，就能得出业务代码的执行时间。
+        */
+        // format() 将时间对象转换为指定格式。 
+    </script>
+</body>
+
+</html>

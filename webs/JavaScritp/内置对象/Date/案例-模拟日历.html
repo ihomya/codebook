@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            color: sandybrown;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        let div = document.querySelector('div');
+        div.innerText = getFormatTime();
+        function getFormatTime() {
+            var today = new Date()
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1; // 月
+            let date = today.getDate();
+            let day = today.getDay(); // 星期
+            var dayArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            return `今天是${year}年${month}月${date}日 ${dayArr[day]}`
+        }
+    </script>
+</body>
+
+</html>

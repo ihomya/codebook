@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        /* <!-- 
+            问题：子集浮动后父级元素并未被子集撑开 ,两部分浮动互相干扰
+            解决方法：清除浮动
+            1. 为浮动元素的父级添加高度，当高度不足时浮动元素将会脱离父级[无法撑起一个容器]（根本原因）
+            2. 为为后一个浮动元素的父级clear:both; 指的是不允许左侧和右侧有浮动对象；但添加后会使该元素magrin属性失效，margin失效的本质原因是：上图中的box1和box2，高度为零
+         --> */
+
+        * {}
+
+        /* 清除浮动方式1 给父级加高度，但实际开发较少使用，一般由子级自动撑开 */
+        /* 如果div自己的高度小于孩子的高度，也会出现不正常的现象 */
+        /* div {
+            height: 2px;
+            height: 30px;
+        } */
+
+        li {
+            float: left;
+            width: 100px;
+            height: 20px;
+            background-color: pink;
+
+
+        }
+
+        /* 清除浮动方式2，为后一个浮动元素的父级添加clear:both;但该元素margin属性失效，原因是父级没有高度 */
+        /* mgrgin-top/margin-bottom不生效 */
+        /* .box2 {
+            clear: both;
+            margin: 10px;
+        } */
+
+        /* 清除浮动方式3：隔墙法 */
+        .cl {
+            clear: both;
+        }
+
+        .h16 {
+            height: 16px;
+        }
+
+        /* 清除浮动方式4：溢出隐藏，给父级加overflow:hidden */
+        .box1 {
+            background-color: yellow;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <ul>
+            <li>生命壹号1</li>
+            <li>生命壹号2</li>
+            <li>生命壹号3</li>
+            <li>生命壹号4</li>
+        </ul>
+        <!-- 清除浮动方式3：内墙法[一个父亲是不能被浮动的儿子撑出高度的] -->
+        <!-- <div class="cl"></div> -->
+    </div>
+    <!-- 清除浮动方式3：外墙法：隔开两部分浮动，互不影响 【外墙法，虽然一道墙可以把两个div隔开，但是这两个div没有高，也就是说，无法wrap_content包住内容】-->
+    <!-- <div class="cl h16"></div> -->
+    <div class="box2">
+        <ul>
+            <li>许嵩1</li>
+            <li>许嵩2</li>
+            <li>许嵩3</li>
+            <li>许嵩4</li>
+        </ul>
+    </div>
+</body>
+
+</html>
