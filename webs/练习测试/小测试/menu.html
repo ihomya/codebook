@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100px;
+        }
+
+
+        .menu {
+            position: relative;
+            width: 100px;
+            margin: 100px auto;
+            /* background-color: pink; */
+        }
+
+        .menu li {
+            list-style: none;
+        }
+
+        .menu .item {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 1s;
+            z-index: -1;
+        }
+
+        #menu_button {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="javascript:;" id="menu_button">btn</a></li>
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+        </ul>
+    </div>
+    <script>
+        var menu_button = document.querySelector('#menu_button')
+        var on = false;
+        menu_button.onclick = function () {
+            if (on) {
+                document.querySelector('.menu').children[1].style.top = '25px'
+                document.querySelector('.menu').children[2].style.left = '25px'
+                document.querySelector('.menu').children[3].style.left = '25px'
+                on = false;
+            } else {
+                document.querySelector('.menu').children[1].style.top = '-75px'
+                document.querySelector('.menu').children[2].style.left = '-75px'
+                document.querySelector('.menu').children[3].style.left = '125px'
+                on = true;
+            }
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box1,
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid #ccc;
+            padding: 10px;
+            margin: 20px;
+
+        }
+
+        #box2,
+        #box4 {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+            border: 5px solid #333;
+        }
+
+        #box1 {
+            position: relative;
+        }
+
+        #box2 {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const box1 = document.querySelector('#box1')
+            // 1. offsetWidth/offsetHeight 获取当前元素宽高 
+            // 1.1 包括元素的边框、内边距和元素的水平滚动条（如果存在且渲染的话），不包含 :before或 :after 等伪类元素的高度
+            // 1.2 只读属性
+            // offsetWidth = width + padding + border  
+            console.log(box1.offsetWidth); // 200+20+20
+            // offsetHeight = Height + padding + border 
+            console.log(box1.offsetHeight); // 200+20+20
+
+            /* 2. offsetParent 获取当前元素的定位父元素 */
+            const box2 = document.querySelector('#box2')
+            // 2.1 如果当前元素的父元素，有CSS定位，那么 offsetParent 获取的是最近的那个父元素
+            console.log(box2.offsetParent); // box1
+            const box3 = document.querySelector('#box3')
+            const box4 = document.querySelector('#box4')
+            // 2.2 如果当前元素的父元素，没有CSS定位，那么offsetParent 获取的是body
+            console.log(box4.offsetParent); // body
+
+            /* 3. offsetLeft 和 offsetTop 当前元素相对于其定位父元素的水平/垂直偏移量 */
+            // 备注：从父亲的 padding 开始算起，父亲的 border 不算在内。
+            console.log(box2.offsetLeft); // 50
+            console.log(box2.offsetTop); // 50
+            // console.log(box2.style.left); // 只能获取行内样式
+            /* offsetLeft 和 style.left 区别 */
+            /* 
+                1.  offsetLeft 可以返回无定位父元素的偏移量。如果父元素中都没有定位，则body为准
+                style.left 只能获取行内样式，如果父元素中都没有设置定位，则返回""
+                2. offsetTop 返回的是数字，而 style.top 返回的是字符串，而且还带有单位：px
+                3. offsetLeft 和 offsetTop 只读，而 style.left 和 style.top 可读写
+            */
+            // 总结：我们一般的做法是：用offsetLeft 和 offsetTop 获取值，用style.left 和 style.top 赋值（比较方便）
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <div id="box3">
+        <div id="box4"></div>
+    </div>
+</body>
+
+</html>

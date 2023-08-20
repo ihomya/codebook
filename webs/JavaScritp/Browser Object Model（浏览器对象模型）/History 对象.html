@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // History对象：可以用来操作浏览器的向前或向后翻页。
+
+        // history.length
+        // 解释：获取浏览器历史列表中的 url 数量
+        // 注意，只是统计当次的数量，如果浏览器关了，数量会重置为1。
+        console.log(history.length);
+
+        // history.back();
+        // 解释：用来回退到上一个页面，作用和浏览器的「回退按钮」一样。
+        // history.forward();
+        // 解释：用来跳转下一个页面，作用和浏览器的「前进按钮」一样。
+
+        // history.go( int n);  // 需要整数作为参数
+        // 解释：向前/向后跳转 n 个页面。
+        /* // 代码举例：
+            history.go( 1 ); // 向前跳转一个页面，相当于 history.forward()
+
+            history.go( 2 ); // 表示向前跳转两个页面
+
+            history.go( 0 ); // 刷新当前页面
+
+            history.go( -1 ); // 向后跳转一个页面，相当于 history.back()
+
+            history.go( -2 ); // 向后跳转两个页面 */
+    </script>
+</body>
+
+</html>

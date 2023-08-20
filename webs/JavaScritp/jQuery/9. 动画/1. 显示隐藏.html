@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <button class="isShow" style="display: none;">显示</button>
+    <button class="isHide">隐藏</button>
+    <div class="box" style="width: 200px;height: 200px;background-color: pink;"></div>
+    <script>
+        $(document).ready(function () {
+            $(".isHide").click(function () {
+                $(".box").hide(2000); // 延迟2s隐藏: 解释：通过控制元素的宽高、透明度、display属性，逐渐隐藏，2秒后隐藏完毕
+                $(".isShow").show();
+                $(this).hide()
+            });
+            $(".isShow").click(function () {
+                $(".box").show("slow", function () {
+                    // 参数可以是: slow 慢：600ms; normal 正常：400ms; fast 快：200ms
+                    // 同时还可以添加回调函数
+                    alert("显示完成!!!(回调函数)")
+                })
+                $(".isHide").show()
+                $(this).hide()
+                // $(this).toggle(); // 显示和隐藏的来回切换采用的是toggle()方法：就是先执行show()，再执行hide()
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="father0">
+            <div class="son0"></div>
+        </div>
+        <div class="father1">
+            <div class="son1">son1</div>
+            <div class="son2">son2</div>
+        </div>
+        <div class="father2">
+            <div class="son3">son3</div>
+            <div class="son4">son4</div>
+        </div>
+        <div class="father3">
+            <div class="son5">son5</div>
+            <div class="son6">son6</div>
+        </div>
+    </div>
+    <script>
+        var father1 = document.querySelector('.father1')
+        console.log(father1);
+        // 1. 获取father1父节点，一个节点只有一个父节点
+        console.log(father1.parentNode); // yeye
+
+        // 2. 获取father1下一个节点（兄弟节点）
+        console.log(father1.nextSibling); // 这里获取的是 \n 转行文本节点
+
+        // 3. 获取father1下一个元素节点（兄弟节点）
+        console.log(father1.nextElementSibling); // father2
+
+        // 4. 获取father1前一个节点（兄弟节点）
+        console.log(father1.previousSibling); // \n 转行文本节点
+
+        // 5. 获取father1前一个元素节点（兄弟节点）
+        console.log(father1.previousElementSibling); // father0
+
+        // 6. 获取第一个/最后一个子节点
+        console.log(father1.firstChild);// \n 转行文本节点
+        console.log(father1.lastChild);// \n 转行文本节点
+
+        // 7.获取第一个/最后一个子元素节点
+        console.log(father1.firstElementChild);
+        console.log(father1.lastElementChild);
+
+        // 8. 获得所有子节点
+        console.log(father1.childNodes); // NodeList(5) [text, div.son1, text, div.son2, text]
+
+        // 9. 获得所有子元素节点
+        // 只返回HTML节点，甚至不返回文本节点
+        console.log(father1.children); // HTMLCollection(2) [div.son1, div.son2]
+    </script>
+</body>
+
+</html>

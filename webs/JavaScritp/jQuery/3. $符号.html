@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // jQuery占用了我们两个变量：$ 和 jQuery
+        console.log($);
+        console.log(jQuery);
+        console.log($ === jQuery); // $ 代表的就是 jQuery
+
+        // $ 实际上表示的是一个函数名
+        // 返回的是jQuery对象
+        /*
+            $(); // 调用上面我们自定义的函数$
+
+            $(document).ready(function () { }); // 调用入口函数
+
+            $(function () { }); // 调用入口函数
+
+            $("#btnShow") // 获取id属性为btnShow的元素
+
+            $("div") // 获取所有的div标签元素 
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Location 对象：封装了浏览器地址栏的 URL 信息
+
+        // location.href
+        // 解释：获取当前页面的 url 路径（或者设置 url 路径）；或者跳转到指定路径
+        console.log(location.href); // 获取当前页面的url 路径
+        // location.href = 'www.baidu.com'; // 跳转到指定的页面链接。通俗理解就是：跳转到其他的页面
+        // 如果直接将location.href属性修改为一个绝对路径（或相对路径），则页面会自动跳转到该路径，并生成相应的历史记录
+
+        /* window.location.href 是异步代码：
+
+        需要特别注意的是：window.location.href的赋值，并不会中断Javascript的执行立即进行页面跳转。
+
+        因为 LocationChange 行为在浏览器内核中是起定时器异步执行的。
+        异步执行的好处是为了防止代码调用过深，导致栈溢出，另外也是为了防止递归进入加载逻辑，导致状态紊乱，保证导航请求是顺序执行的。
+
+        解决办法：在 location.href 的下一行，加上 return 即可。意思是，执行了 location.href 之后，就不要再继续往下执行了 */
+
+        // location.assign(str);
+        // 解释：用来跳转到其他的页面，作用和直接修改location.href一样
+
+        // location.reload();
+        // 解释：用于重新加载当前页面，作用和刷新按钮一样。
+        // location.reload(true); // 在方法的参数中传递一个true，则会强制清空缓存刷新页面。
+
+        // location.replace();
+        // 解释：使用一个新的页面替换当前页面，调用完毕也会跳转页面。但不会生成历史记录，不能使用「后退按钮」后退。
+
+    </script>
+</body>
+
+</html>

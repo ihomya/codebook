@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let speed = 400;
+            // 注意：省略参数或者传入不合法的字符串，那么则使用默认值：400毫秒
+            $("button:eq(0)").click(function () {
+                $(".box").slideDown(speed, function () {
+                    alert("滑入动画")
+                })
+            })
+            $("button:eq(1)").click(function () {
+                $(".box").slideUp(speed, function () {
+                    alert("滑出动画")
+                })
+            })
+
+            $("button:eq(2)").click(function () {
+                $(".box").slideToggle(speed, function () {
+                    alert("滑入滑出动画切换")
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>滑入</button>
+    <button>滑出</button>
+    <button>切换</button>
+    <div class="box" style="width: 200px;height: 200px;background-color: pink;display: none;"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button:eq(0)").click(function () {
+                $(".box").fadeIn(1000, function () {
+                    alert("box fadein")
+                })
+            })
+            $("button:eq(1)").click(function () {
+                $(".box").fadeOut(1000, function () {
+                    alert("box fadeout")
+                })
+            })
+            $("button:eq(2)").click(function () {
+                $(".box").fadeToggle("slow")
+            })
+            // 作用：通过改变透明度，切换匹配元素的显示或隐藏状态。
+            $("button:eq(3)").click(function () {
+                //改透明度
+                //同样有四种用法
+                $("div").fadeTo(1000, 0.5, function () {
+                    alert(1);
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>切换</button>
+    <button>透明0.5</button>
+    <div class="box" style="width: 200px;height: 200px;background-color: pink;display: none;"></div>
+</body>
+
+</html>

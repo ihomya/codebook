@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 6000px;
+            width: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // （1）如果文档没有 DTD 声明,兼容chrome 
+        // document.body.scrollTop
+        // （2）如果文档有 DTD 声明，兼容IE6、7、8
+        // document.documentElement.scrollTop
+        // 另外还有一种兼容性的写法：window.pageYOffset 和 window.pageXOffset。这种写法无视DTD的声明。这种写法支持的浏览器版本是：火狐/谷歌/ie9+
+
+        // 为了兼容，不管有没有DTD，最终版的兼容性写法
+        // window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+
+        // 判断是否已经 DTD 声明
+        // document.compatMode === "CSS1Compat"   // 已声明
+        // document.compatMode === "BackCompat"   // 未声明
+
+    </script>
+    <script>
+
+        //需求：封装一个兼容的scroll().返回的是对象，用scroll().top获取scrollTop，用scroll().left获取scrollLeft
+
+        window.onscroll = function () {
+            //        var myScroll = scroll();
+            //        myScroll.top;
+            console.log(scroll().top);
+            console.log(scroll().left);
+        }
+
+        //函数封装（简单封装，实际工作使用）
+        function scroll() {
+            return { //此函数的返回值是对象
+                top: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+                left: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

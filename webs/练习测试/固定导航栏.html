@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 2000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: absolute;
+            right: -100px;
+            top: 300px;
+
+            width: 50px;
+            height: 200px;
+            border: 1px solid #000;
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <script>
+        window.onload = function () {
+            let nav = document.querySelector('.nav');
+            let container = document.querySelector('.container');
+            window.onscroll = function () {
+                console.log(container.scrollTop);
+                // console.log(document.documentElement.scrollTop);
+                let navTop = nav.offsetTop - this.pageYOffset;
+                if (navTop >= 200) {
+                    console.log(nav.offsetLeft);
+                    let left = nav.offsetLeft;
+                    nav.style.position = 'fixed';
+                    nav.style.left = left + 'px'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Window：代表整个浏览器的窗口，同时 window 也是网页中的全局对象 -->
+    <!-- Screen：代表用户的屏幕信息，通过该对象可以获取用户的显示器的相关信息。 -->
+    <script>
+        // Navigator代表当前浏览器的信息，通过该对象可以识别不同的浏览器
+        // *由于历史原因，Navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
+
+        // 一般我们只会使用navigator.userAgent来获取浏览器的信息
+        // userAgent 的值是一个字符串，简称 UA，这个字符串中包含了用来描述浏览器信息的内容，不同的浏览器会有不同的userAgent
+        let ua = navigator.userAgent; // 获取当前浏览器的ua
+        console.log('当前浏览器的UA是' + ua);
+        if (/firefox/i.test(ua)) {
+            alert('是火狐浏览器');
+        } else if (/chrome/i.test(ua)) {
+            alert('是Chrome浏览器');
+        } else if (/msie/i.test(ua)) {
+            alert('是IE浏览器');
+        } else if ('ActiveXObject' in window) {
+            alert('是 IE11 浏览器');
+        }
+    </script>
+</body>
+
+</html>

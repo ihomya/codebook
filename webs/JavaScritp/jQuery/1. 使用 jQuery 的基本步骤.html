@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">123</div>
+    <!-- jquery 两大特点
+        1. 链式编程：比如.show()和.html()可以连写成.show().html()
+            链式编程原理：return this
+            通常情况下，只有设置操作才能把链式编程延续下去。因为获取操作的时候，会返回获取到的相应的值，无法返回 this
+        2. 隐式迭代: 在方法的内部会为匹配到的所有元素进行循环遍历，执行相应的方法；而不用我们再进行循环，简化我们的操作，方便我们调用。
+            如果获取的是多元素的值，大部分情况下返回的是第一个元素的值。
+    -->
+    <!-- /* 基本步骤 
+    *   1. 引包
+    *   2. 入口函数
+    *   3. 功能实现代码/事件处理
+    */ -->
+
+    <!-- 1. 引包 -->
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script>
+        // <!-- 2. 入口函数 -->
+        $(document).ready(function () {
+            // 3. 实现代码
+            $("#demo").click(function () {
+                alert('jquery事件处理')
+            })
+        })
+    </script>
+</body>
+
+</html>

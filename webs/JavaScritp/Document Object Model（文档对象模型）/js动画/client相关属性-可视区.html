@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 1000px;
+            height: 2000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">
+            11111111111111111111111111111111111111
+            11111111111111111111111111111111111111
+            11111111111111111111111111111111111111
+            11111111111111111111111111111111111111
+            11111111111111111111111111111111111111
+        </div>
+    </div>
+    <script>
+        // 元素调用时：
+        // clientWidth：获取元素的可见宽度（width + padding）
+        // clientHeight：获取元素的可见高度（height + padding
+        let box1 = document.querySelector('.box1');
+        console.log(box1.clientWidth);
+        console.log(box1.clientHeight);
+        let box2 = document.querySelector('.box2');
+        console.log(box2.clientWidth);
+        console.log(box2.clientHeight);
+
+        /* body / html 调用时：  
+            clientWidth：获取网页可视区域宽度。 
+            clientHeight：获取网页可视区域高度。
+        */
+        console.log(document.body.clientWidth);
+        console.log(document.body.clientHeight);
+        // 只读属性
+
+        /*  clientTop 和 clientLeft
+                clientTop：盒子的上border。 
+                clientLeft：盒子的左border。 
+        */
+        console.log(box2.clientTop);
+        console.log(box2.clientLeft);
+        /*  clientX 和 clientY
+            event调用：   不随页面滚动而改变 所有浏览器均支持
+            clientX：鼠标距离相对于浏览器可视区域左侧距离。 
+            clientY：鼠标距离相对于浏览器可视区域上侧距离。
+        */
+        box1.addEventListener('click', function (event) {
+            console.log(event.clientX, event.clientY);
+        })
+    </script>
+</body>
+
+</html>

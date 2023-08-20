@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: absolute;
+        }
+
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        // 当按下键盘时
+        document.onkeydown = function (event) {
+            // 获取盒子当前位置
+            let boxX = box.offsetLeft;
+            let boxY = box.offsetTop;
+            // 每次移动10px
+            let speed = 10;
+            if (event.ctrlKey) {
+                speed = 20;
+            }
+            // 待优化1）移动盒子时，如果要加速，需要先按方向键，再按Ctrl键
+            /*
+               * 37 左
+               * 38 上
+               * 39 右
+               * 40 下
+               */
+            switch (event.keyCode) {
+                case 37:
+                    box.style.left = boxX - speed + 'px';
+                    break;
+                case 38:
+                    box.style.top = boxY - speed + 'px';
+                    break;
+                case 39:
+                    box.style.left = boxX + speed + 'px';
+                    break;
+                case 40:
+                    box.style.top = boxY + speed + 'px';
+                    break;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

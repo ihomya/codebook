@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setTimeout()：延时调用。将一段代码，等待一段时间之后再执行。（只执行一次）
+        // setTimeout(回调函数,间隔时间)
+        // 返回值：返回一个Number类型的数据。这个数字用来作为定时器的唯一标识，方便用来清除定时器。
+        // #定义和清除定时器
+        const timer = setTimeout(function () {
+            console.log(1); // 3秒之后，再执行这段代码。
+        }, 3000);
+
+        clearTimeout(timer);
+        // 2. 箭头函数写法
+        /* setTimeout(() => {
+               console.log(1); // 3秒之后，再执行这段代码。
+           }, 3000); */
+    </script>
+</body>
+
+</html>

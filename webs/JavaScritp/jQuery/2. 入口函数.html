@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // 原生js入口函数 (出现多次会被覆盖)
+        //原生 js 的入口函数。页面上所有内容加载完毕，才执行。
+        //不仅要等文本加载完毕，而且要等图片也要加载完毕，才执行函数。
+        // window.onload = function () { };
+
+        // jquery 入口函数(出现多次不覆盖)
+        //1.文档加载完毕，图片不加载的时候，就可以执行这个函数。
+        $(document).ready(function () {
+            alert(1);
+        })
+        // 2. 写法1的简洁版
+        $(function () {
+            alert(2);
+        });
+
+        // 3.文档加载完毕，图片也加载完毕的时候，在执行这个函数。
+        $(window).ready(function () {
+            alert(3);
+        })
+
+
+        /*
+        jQuery入口函数与js入口函数的区别：
+
+        * 区别一：书写个数不同： 
+            1. Js 的入口函数只能出现一次，出现多次会存在事件覆盖的问题。 
+            2. jQuery 的入口函数，可以出现任意多次，并不存在事件覆盖问题。
+
+        * 区别二：执行时机不同： 
+            1. Js的入口函数是在所有的文件资源加载完成后，才执行。这些文件资源包括：页面文档、外部的js文件、外部的css文件、图片等。 
+            2. jQuery的入口函数，是在文档加载完成后，就执行。文档加载完成指的是：DOM树加载完成后，就可以操作DOM了，不用等到所有的外部资源都加载完成。
+
+        文档加载的顺序：从上往下，边解析边执行。 
+        */
+    </script>
+</body>
+
+</html>

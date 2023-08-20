@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin-bottom: 10px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>节点类型</h2>
+        <ul>
+            <li>元素节点 nodeType: 1</li>
+            <li>属性节点 nodeType: 2</li>
+            <li>文本节点 nodeType: 3</li>
+        </ul>
+        <p>（1）一个元素就是一个节点，这个节点称之为“元素节点”。</p>
+        <p>（2）属性节点和文本节点看起来像是元素节点的一部分，但实际上，它们是独立的节点，并不属于元素节点</p>
+        <p>（3）只有元素节点才可以拥有子节点，属性节点和文本节点都无法拥有子节点</p>
+    </div>
+    <h2>节点基本操作</h2>
+    <ol id="ol1">
+        <li id="li1">第一个li</li>
+        <li id="li2">第二个li</li>
+    </ol>
+    <div class="new"></div>
+    <button type="button" onclick="DappendChild(ol)"> parent.appendChild(newElement) 追加元素到末尾</button>
+    <br>
+    <button type="button" onclick="DinsertBefore(ol)"> parent.insertBefore(newElement,child) 插入节点到指定第二个li前面 </button>
+    <br>
+    <button type="button" onclick="DremoveChild(ol)">
+        parent.removeChild(child) 移除已存在的元素
+    </button>
+    <br>
+    <button type="button" onclick="DreplaceChild(ol)">
+        parent.replaceChild(newElement, child) 替换原有元素
+    </button>
+    <br>
+    <button type="button" onclick="clone(ol,true)">
+        parent.cloneNode(bool) 复制元素
+    </button>
+    <script>
+        var ol = document.getElementById('ol1')
+        // 1. 创建新的节点
+        function DcreateNode() {
+            // 1. 创建li元素
+            let para = document.createElement('li');
+            // 2. 创建文本节点
+            let node = document.createTextNode('新的li');
+            // 3. 将文本节点添加到p元素中
+            para.appendChild(node);
+            return para;
+        }
+
+        // 2. 追加元素到末尾
+        function DappendChild(obj) {
+            obj.appendChild(DcreateNode())
+        }
+
+        // 3. 插入节点到指定第二个li前面
+        function DinsertBefore(obj) {
+            obj.insertBefore(DcreateNode(), document.getElementById('li2'))
+        }
+
+        // 4. 移除已存在的元素
+        function DremoveChild(obj) {
+            // 删除节点必须知道父节点
+            obj.removeChild(document.getElementById("li1"));
+        }
+
+        // 5. 替换 HTML 元素
+        function DreplaceChild(obj) {
+            obj.replaceChild(DcreateNode(), document.getElementById('li1'))
+        }
+
+        // 6. 复制 HTML 元素
+        function clone(obj, bool) {
+            // 参数表示是否深复制(浅克隆不复制内部元素)
+            // 1. 复制元素
+            var lis = obj.cloneNode(bool);
+            // 2. 获取父元素
+            var div = document.getElementsByClassName('new');
+            // 3. 将复制元素放置到父元素中
+            div[0].appendChild(lis)
+        }
+    </script>
+</body>
+
+</html>

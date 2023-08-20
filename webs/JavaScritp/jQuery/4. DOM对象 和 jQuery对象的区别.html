@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        二者的区别: 通过 jQuery 获取的元素是一个数组，数组中包含着原生JS中的DOM对象
+     -->
+    <div></div>
+    <div class="box"></div>
+    <div id="box"></div>
+    <div class="box"></div>
+    <div></div>
+    <script>
+        /* 原生js获取元素节点 */
+        var myBox = document.getElementById("box");           //通过 id 获取单个元素
+        var boxArr = document.getElementsByClassName("box");  //通过 class 获取的是数组
+        var divArr = document.getElementsByTagName("div");    //通过标签获取的是数组
+
+        /* jQuery 获取元素节点 */
+        //获取的是数组，里面包含着原生 JS 中的DOM对象。
+        var jqBox1 = $("#box");
+        var jqBox2 = $(".box");
+        var jqBox3 = $("div");
+        console.log("----- 原生js -----");
+        console.log(myBox);
+        console.log(boxArr);
+        console.log(divArr);
+        console.log("----- jquery -----");
+        console.log(jqBox1);
+        console.log(jqBox2);
+        console.log(jqBox3);
+
+        // JQuery 自带了 css()方法，我们还可以直接在代码中给 div 设置 css 属性
+        jqBox2.css({ "width": 50, "height": 50, "background": "pink" })
+    </script>
+</body>
+
+</html>

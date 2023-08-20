@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1">
+        box1
+        <p id="p1">p1</p>
+    </div>
+    <div id="box2">
+        box2
+        <p id="p2">p2</p>
+    </div>
+    <!-- 标签内容修改 -->
+    <div>
+        <h2>innerHTML和innerText的区别</h2>
+        <ul>
+            <li>value：标签的value属性</li>
+            <li>innerHTML：双闭合标签里面的内容（包含标签）</li>
+            <li>innerText：双闭合标签里面的内容（不包含标签）。（老版本的火狐用textContent）</li>
+        </ul>
+    </div>
+    <div>
+        <h2>nodeType属性</h2>
+        <ul>
+            <li>nodeType == 1 表示的是元素节点（标签） </li>
+            <li>nodeType == 2 表示是属性节点</li>
+            <li> nodeType == 3 是文本节点</li>
+        </ul>
+    </div>
+
+    <script>
+        //获取元素节点（标签）
+        var element = document.getElementById("box1");
+        //获取box1的属性节点
+        var attribute = element.getAttributeNode("id");
+        //获取box1的文本节点
+        var txt = element.firstChild;
+        //获取id的属性值
+        var value = element.getAttribute("id");
+
+        //获取nodeType
+        console.log(element.nodeType);       //1
+        console.log(attribute.nodeType);     //2
+        console.log(txt.nodeType);           //3
+
+        console.log("--------------");
+
+        //获取nodeName
+        console.log(element.nodeName);       //DIV
+        console.log(attribute.nodeName);     //id
+        console.log(txt.nodeName);           //#text
+
+        console.log("--------------");
+
+        //获取nodeValue
+        console.log(element.nodeValue);     //null
+        console.log(attribute.nodeValue);   //box1
+        console.log(txt.nodeValue);
+
+        console.log(document.getElementById('box1').innerHTML);
+        console.log(document.getElementById('box1').innerText);
+
+        document.getElementById('box1').innerHTML = "<b>innerHTML 支持标签修饰</b>"
+        document.getElementById('box2').innerText = "<b>innerText 不支持标签修饰</b>"
+
+    </script>
+</body>
+
+</html>

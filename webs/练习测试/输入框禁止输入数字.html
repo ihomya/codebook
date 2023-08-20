@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" />
+
+    <script>
+        //获取input
+        var input = document.getElementsByTagName('input')[0];
+
+        input.onkeydown = function (event) {
+            event = event || window.event;
+
+            //console.log('qianguyihao:' + event.keyCode);
+            //数字 48 - 57
+            //使文本框中不能输入数字
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                //在文本框中输入内容，属于onkeydown的默认行为
+                return false; // 如果在onkeydown中取消了默认行为，则输入的内容，不会出现在文本框中
+            }
+        };
+    </script>
+</body>
+
+</html>

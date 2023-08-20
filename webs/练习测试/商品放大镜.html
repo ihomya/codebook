@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box; */
+        }
+
+        .box {
+            position: relative;
+            margin: 50px;
+        }
+
+        .big {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 400px;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .big img {
+            width: 500px;
+        }
+
+        .goods-img {
+            position: relative;
+            width: 319px;
+            /* margin: 50px; */
+            background-color: pink;
+            border: 1px solid #000;
+        }
+
+        .goods-img img {
+            /* width: 300px; */
+            /* height: 300px; */
+            vertical-align: top;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="goods-img">
+            <img src="./小兔鲜儿-PC/uploads/clothes_goods_1.jpg" alt="">
+            <div class="mask"></div>
+        </div>
+        <div class="big">
+            <img src="./小兔鲜儿-PC/uploads/clothes_goods_1.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        //需求：鼠标放到小盒子上，让大盒子里面的图片和我们同步等比例移动。
+        //技术点：onmouseenter==onmouseover 第一个不冒泡
+        //技术点：onmouseleave==onmouseout  第一个不冒泡
+        //步骤：
+        //1.鼠标放上去显示盒子，移开隐藏盒子。
+        //2. 黄盒子跟随移动 
+        //3.右侧的大图片，等比例移动。
+
+        // 获取元素
+        const box = document.querySelector('.box')
+        const goodsIMG = document.querySelector('.goods-img');
+        const mask = document.querySelector('.mask');
+        const big = document.querySelector('.big')
+
+        // 1.鼠标放上去显示盒子，移开隐藏盒子。
+        goodsIMG.addEventListener('mouseenter', function () {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+        })
+        goodsIMG.addEventListener('mouseleave', function () {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        })
+
+        //2. 黄盒子跟随移动 
+        goodsIMG.addEventListener('mousemove', function (event) {
+            // 鼠标坐标
+            // 鼠标在页面的位置 = 滚动条滚动的距离 + 可视区域的坐标
+            let pageX = event.pageX || window.scrollLeft + event.clientX;
+            let pageY = event.pageY || window.scrollTop + event.clientY;
+
+            let x = pageX - box.offsetLeft - mask.offsetWidth / 2; // 除以2保证鼠标居中
+            let y = pageY - box.offsetTop - mask.offsetHeight / 2;
+
+            // 避免溢出
+            if (x < 0) {
+                x = 0
+            }
+            if (x > this.offsetWidth - mask.offsetWidth) {
+                x = this.offsetWidth - mask.offsetWidth;
+            }
+            if (y < 0) {
+                y = 0
+            }
+            if (y > this.offsetHeight - mask.offsetHeight) {
+                y = this.offsetHeight - mask.offsetHeight;
+            }
+            mask.style.left = x + 'px';
+            mask.style.top = y + 'px';
+
+            // 3.右侧的大图片，等比例移动。
+            let bl = big.querySelector('img').offsetWidth / this.querySelector('img').offsetWidth;
+            big.querySelector('img').style.marginLeft = -bl * x + 'px'
+            big.querySelector('img').style.marginTop = -bl * y + 'px'
+
+        }, true)
+    </script>
+</body>
+
+</html>

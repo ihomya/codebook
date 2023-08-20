@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 获取节点属性值 -->
+    <div>
+        <h2>获取节点属性值</h2>
+        <ul>
+            <li>元素节点.属性名</li>
+            <li>元素节点[属性名]</li>
+            <li>元素节点.getAttribute("属性名称")</li>
+        </ul>
+        <h2>设置节点的属性值</h2>
+        <ul>
+            <li>元素节点.属性名 = "新的属性值"</li>
+            <li>元素节点.setAttribute("属性名", "新的属性值")</li>
+        </ul>
+        <h2>删除节点的属性</h2>
+        <ul>
+            <li>元素节点.removeAttribute(属性名);</li>
+        </ul>
+    </div>
+    <div>
+        <h2>赋值和使用方法的区别</h2>
+        <ul>
+            <li>
+                <b>如果是节点的“原始属性”，方式1和方式2是没有区别的</b>
+                <p>（原始属性:比如 普通标签的class/className属性、普通标签的style属性、普通标签的 title属性、img 标签的src属性、超链接的href属性等）</p>
+            </li>
+            <li>
+                <b>如果是节点的“非原始属性”,则是有区别的</b>
+                <ul>
+                    <li>方式1 的元素节点.属性和元素节点[属性]：绑定的属性值不会出现在标签上。</li>
+                    <li>方式2 的get/set/removeAttribut：绑定的属性值会出现在标签上。</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

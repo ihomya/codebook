@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <div class="box"></div>
+    <div id="box"></div>
+    <div class="box"></div>
+    <div></div>
+    <script>
+        /* 二者的相互转换 */
+        // 1、 DOM 对象 转为 jQuery对象：$(js对象);
+        let mybox = document.getElementById('box'); // dom对象
+        let jqbox = $(mybox); // jquery对象
+
+        /* 2、jQuery对象 转为 DOM 对象：
+            jquery对象[index];      //方式1（推荐） 
+            jquery对象.get(index);  //方式2
+        */
+        let jqbox3 = $('div')
+        jqbox3.css({ width: 50, height: 50 })
+        jqbox3[0].style.background = "black";
+        jqbox3.get(4).style.background = "pink";
+        // 总结：如果想要用哪种方式设置属性或方法，必须转换成该类型
+    </script>
+</body>
+
+</html>

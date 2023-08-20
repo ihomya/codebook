@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let lis = $("li");
+            for (let i = 0; i < lis.length; i++) {
+                if (i % 2 == 0) {
+                    //jquery对象，转换成了js对象
+                    lis[i].style.background = "pink";
+                } else {
+                    lis[i].style.background = "yellow"
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+    </ul>
+</body>
+
+</html>

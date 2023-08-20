@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" style="width: 100px;height: 100px;background-color: pink;"></div>
+    <script>
+        // style 只能获取和设置行内样式
+        const box = document.getElementById('box');
+        console.log(box.style.width);
+        console.log(box.style.border); // 非行内样式 无法获取
+
+        // 两种方式 设置属性值（字符串）
+        box.style.backgroundColor = 'skyblue';
+        box.style['border'] = '2px solid pink'
+
+        // cssText 属性设置标签css样式
+        box.style.cssText = "width:200px;height:200px;background-color:blue;"
+
+        // 获取元素当前正在显示的样式
+        // 两个参数都是必须要有的。参数二中，如果没有伪元素就用 null 代替（一般都传null）
+        console.log(window.getComputedStyle(box, 'null')); // 返回CSSStyleDeclaration 对象（数组） 只读，修改要通过style属性
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            list-style-type: none;
+            border: 1px solid #000;
+            flex-direction: column;
+        }
+
+        .nav li {
+            width: 200px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        window.addEventListener('load', (e) => {
+            let nav = document.querySelector('.nav');
+            //  通过遍历形式来给li注册事件
+            /* for (let i = 0; i < nav.children.length; i++) {
+                nav.children[i].addEventListener('mouseenter', () => {
+                    nav.children[i].style.backgroundColor = 'skyblue'
+                });
+                nav.children[i].addEventListener('mouseleave', () => {
+                    nav.children[i].style.backgroundColor = 'pink'
+                });
+            } */
+
+            // 通过给父级ul注册事件,给li做事件代理/委托
+            // nav.addEventListener('mouseenter', function (event) {
+            //     console.log(event.bubbles); // 非冒泡事件无法使用事件代理
+            //     event.target.style.backgroundColor = 'skyblue'
+            // })
+            // nav.addEventListener('mouseleave', function (event) {
+            //     console.log(event.bubbles);
+            //     event.target.style.backgroundColor = 'pink'
+            // }); 
+            nav.addEventListener('click', function (event) {
+                // 通过 event.target 获取触发事件的对象
+                event.target.style.backgroundColor = event.target.style.backgroundColor == 'pink' ? 'skyblue' : 'pink';
+            })
+
+            // 总结：事件委托是利用了冒泡机制，减少了事件绑定的次数，减少内存消耗，提高性能
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        nav {
+            /* margin: 0 auto; */
+            margin-top: 100px;
+            width: 200px;
+            border: 1px solid #000;
+            background-color: skyblue;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        nav ul {
+            width: 200px;
+        }
+
+        nav ul li {
+            list-style: none;
+            float: left;
+            padding: 5px 10px;
+        }
+
+        nav ul li:last-child {
+            padding-left: 20px;
+        }
+
+        nav ul li:last-child:hover {
+            cursor: pointer;
+            /* 鼠标手势 */
+        }
+
+        .cl {
+            clear: both;
+        }
+
+        /* 定义nav收缩动画 */
+        @keyframes nav-am {
+            to {
+                width: 60px;
+            }
+        }
+
+        .am {
+            animation: nav-am 2s forwards;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li>首页</li>
+            <li>首页</li>
+            <li>首页</li>
+            <li class="close">X</li>
+        </ul>
+        <!-- 内墙法 解决父级没有高浮动子级无法撑开 -->
+        <div class="cl"></div>
+    </nav>
+    <script>
+        let close = document.querySelector('.close');
+        close.addEventListener('click', function (e) {
+            let nav = document.querySelector('nav')
+            nav.className = ' am'
+        }) 
+    </script>
+</body>
+
+</html>
