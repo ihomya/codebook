@@ -1,0 +1,71 @@
+"!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .wrap>li {
+            position: absolute;
+        }
+
+        .wrap>li>a {
+            background-color: pink;
+        }
+
+        .wrap>li ul {
+            position: relative;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .wrap>li ul>li>a {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="wrap">
+        <li>
+            <a href="javascript:;">一级菜单</a>
+            <ul>
+                <li><a href="javascript:;">二级菜单</a></li>
+                <li><a href="javascript:;">二级菜单</a></li>
+                <li><a href="javascript:;">二级菜单</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(document).ready(function () {
+            $(".wrap>li").mouseenter(function () {
+                $(this).css("height", 150)
+                $(this).children("ul").stop().slideDown(1000)
+            })
+            $(".wrap>li").mouseleave(function () {
+                $(this).css("height", 50)
+                $(this).children("ul").stop().slideUp(1000)
+            })
+        })
+    </script>
+</body>
+
+</html>
