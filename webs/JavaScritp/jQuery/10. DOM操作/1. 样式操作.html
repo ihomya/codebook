@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div id="idname"></div>
+    <div class="classname"></div>
+
+    <script>
+        // 样式操作
+        /* ---------------- */
+        // 设置单个样式
+        $("div").css("background-color", "skyblue")
+
+        // 设置多个样式
+        $("#idname").css({ "width": 200, "height": 200, "background-color": "red" })
+
+        // 获取样式 css(属性)
+        // 获取时如果由很多个,那么获取jquery对象中的第一个
+        alert($(".classname").css("background-color")) 
+    </script>
+</body>
+
+</html>

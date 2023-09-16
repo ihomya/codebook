@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* margin: 0;
+            padding: 0; */
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+        }
+
+        .import-box {
+            width: 250px;
+        }
+
+        .data-list {
+            display: flex;
+            margin-top: 10px;
+            /* justify-content: space-around; */
+        }
+
+        select {
+            width: 200px;
+            outline: none;
+            margin-right: 20px;
+        }
+
+        .language-json {
+            width: auto;
+            height: auto;
+            /* border: 1px solid #000; */
+            /* word-wrap: break-word; */
+            /* white-space: pre; */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="./highlight/styles/default.min.css">
+    <script src="./highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
+</head>
+
+<body>
+    <div class="import-box ">
+        <input type="text" class="source-url">
+        <button class="import-source-url">导入</button>
+    </div>
+    <div class="data-list">
+        <select name="source" id="sites" multiple size=10>
+            <!-- <option value="0">test</option> -->
+        </select>
+        <div class="code">
+            <pre><code class="language-json"></code></pre>
+            <button class="export">导出</button>
+        </div>
+    </div>
+    <div class="newlist">
+        <select name="source1" id="new-sites" multiple size=10>
+            <!-- <option value="0">test</option> -->
+        </select>
+    </div>
+    <script>
+        var importButton = $(".import-source-url")
+        var sourceSel = $('#sites')
+
+        var jsonData;
+        var importData;
+        // 载入数据
+        function onLoadData(url) {
+            $.getJSON(url, function (data) {
+                data.sites.forEach((element, index) => {
+                    // console.log(element)
+                    var node = $('<option value=' + index + '>' + element.key + '</option>')
+                    sourceSel.append(node)
+                });
+                jsonData = data // 外部访问数据有延迟
+            });
+        }
+        // 点击按钮 导入数据
+        importButton.click(function () {
+            // var url = $('.source-url').val();
+            var url = "https://ghproxy.com/raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json"
+            if (url == "") {
+                alert("请输入json地址")
+                return;
+            }
+            onLoadData(url)
+            setTimeout(function () {
+                console.log(jsonData)
+                $('#sites option').dblclick(function () {
+                    // console.log(this);
+                    let val = $(this).val()
+                    console.log(val);
+                    // $('.language-json').html(JSON.stringify(jsonData.sites[val]))
+                    $('.language-json').html(`
+{
+    "key": ${JSON.stringify(jsonData.sites[val].key)},
+    "name": ${JSON.stringify(jsonData.sites[val].name)},
+    "type": ${JSON.stringify(jsonData.sites[val].type)},
+    "api": ${JSON.stringify(jsonData.sites[val].api)},
+    "searchable": ${JSON.stringify(jsonData.sites[val].searchable)},
+    "changeable": ${JSON.stringify(jsonData.sites[val].changeable)},
+    "ext": ${JSON.stringify(jsonData.sites[val].ext)}
+}`)
+                })
+                $('.export').click(function () {
+                    let val = $("#sites option:selected").val()
+                    console.log(val);
+                    var node = $('<option value=' + val + '>' + jsonData.sites[val].key + '</option>')
+                    $("#new-sites").append(node)
+                })
+            }, 2000)
+        })
+        // + '</br><button class="export">导出</button>'
+        importButton.click()
+    </script>
+
+</body>
+
+</html>

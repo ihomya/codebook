@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+        select {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="sel1" id="sel1" multiple size="5">
+        <option value="0">menu1</option>
+        <option value="1">menu2</option>
+        <option value="2">menu3</option>
+        <option value="3">menu4</option>
+    </select>
+    <button>all right</button>
+    <button>all left</button>
+    <button>right</button>
+    <button>left</button>
+    <select name="sel2" id="sel2" multiple size="5"></select>
+    <script>
+        $("button").eq(0).click(
+            function () {
+                $("#sel2").append($("#sel1 option"))
+            }
+        )
+        $("button").eq(1).click(
+            function () {
+                $("#sel1").append($("#sel2 option"))
+            }
+        )
+        $("button").eq(2).click(
+            function () {
+                $("#sel2").append($("#sel1 option:selected"))
+            }
+        )
+        $("button").eq(3).click(
+            function () {
+                $("#sel1").append($("#sel2 option:selected"))
+            }
+        )
+    </script>
+</body>
+
+</html>

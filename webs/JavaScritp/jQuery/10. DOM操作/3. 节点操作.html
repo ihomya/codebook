@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div class="box1">123</div>
+    <script>
+        // <!-- 动态创建元素 -->
+        // 1 此方法类似于 原生 js 中的document.createElement("标签名")
+        var $node = $("<span>我是一个span元素</span>");  // 返回的是 jQuery对象;
+        // 2（推荐）此方法类似于 原生 js 中的innerHTML
+        var node = $("#box").html("<li>我是li</li>");
+
+        // 添加元素
+        var selector = "#box"
+        // 方式一：在$(selector)中追加$node 
+        $(selector).append($node);   //参数是 jQuery对象 
+
+        // 方式二：在$(selector)中追加div元素，
+        $(selector).append('<span>1</span>');  //参数是 htmlString
+
+        // append() 在盒子里的最末尾添加元素
+        /* 
+        1. 如果追加的元素是页面中存在的,则相当于将原有元素(原位置将不存在)移动到目标元素里  
+        2. 如果是给多个目标追加元素，那么方法的内部会复制多份这个元素，然后追加到多个目标里面去。
+        */
+        // $(selector).appendTo(node); 同append()，只不过是反着写的??
+        // $(selector).prepend(node); 在元素的第一个子元素前面追加内容或节点
+        // $(selector).after(node); 在被选元素之后，作为兄弟元素插入内容或节点
+        // $(selector).before(node); 在被选元素之后，作为兄弟元素插入内容或节点
+
+        // 清空元素
+        // 方式一：没有参数
+        // $(selector).empty();
+        // $(selector).html("");
+        // 解释：清空指定元素的所有子元素（光杆司令）
+        // 方式二：把自己以及所有的内部元素从文档中删除掉
+        // $(selector).remove();
+
+        // #复制元素:复制$(selector)这个元素。是深层复制
+        // 复制的新元素 = $(selector).clone();
+
+        // 推荐使用 html("<span></span>") 方法来创建元素或者 html("") 清空元素。
+    </script>
+</body>
+
+</html>

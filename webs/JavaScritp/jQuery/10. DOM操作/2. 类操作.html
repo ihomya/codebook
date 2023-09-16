@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // 类操作
+        /* ---------------- */
+        var selector = "div.box";
+        // 1. 添加类
+        $(selector).addClass("classname1");
+        $(selector).addClass("classname2");
+
+        // 2. 移除类
+        $(selector).removeClass("classname1")
+        // $(selector).removeClass() //不指定参数，表示移除被选中元素的所有类
+
+        // 3、判断有没有类样式
+        alert($(selector).hasClass("classname1")) // false
+        alert($(selector).hasClass("classname2")) // true
+        // jquery对象中，只要有一个带有指定类名的就是true，所有都不带才是false
+        alert($("div").hasClass("classname2")) // true
+
+        // 4、切换类样式
+        // 为指定元素切换类 className，该元素有类则移除，没有指定类则添加
+        $(selector).toggleClass("toggle")
+        alert($(selector).hasClass("toggle")) // true
+        $(selector).toggleClass("toggle")
+        alert($(selector).hasClass("toggle")) // false
+
+        /* 样式操作和类操作的比较
+            1. 操作的样式非常少，那么可以通过.css()实现。 
+            2. 操作的样式很多，建议通过使用类 class 的方式来操作。 
+            3. 如果考虑以后维护方便（把CSS从js中分离出来）的话，推荐使用类的方式来操作。
+        */
+    </script>
+</body>
+
+</html>
